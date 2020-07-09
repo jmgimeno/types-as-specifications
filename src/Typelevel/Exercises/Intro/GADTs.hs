@@ -13,6 +13,7 @@ data Miles
 data ELit
   = LBool Bool
   | LInt Int
+  deriving Show
 
 data Expr
   = ELit ELit
@@ -20,6 +21,7 @@ data Expr
   | EAnd Expr Expr
   | EEq Expr Expr
   | EIf Expr Expr Expr
+  deriving Show
 
 eval :: Expr -> Either [Char] ELit
 eval expr =
@@ -35,7 +37,15 @@ eval expr =
             LBool _ -> Left "Cannot add EBool"
         LBool _ -> Left "Cannot add EBool"
     -- Similar implementation as EAdd
-    EAnd e1 e2 -> undefined
+    EAnd e1 e2 -> do
+      res1 <- eval e1
+      case res1 of
+        LBool b1 -> do
+          res2 <- eval e2
+          case res2 of
+            LBool b2 -> Right (LBool (b1 && b2))
+            LInt _ -> Left "Cannod add EInt"
+        LInt _ -> Left "Cannot add EInt"
     EEq e1 e2 -> do
       res1 <- eval e1
       res2 <- eval e2
@@ -49,7 +59,11 @@ eval expr =
     --   Implement the evaluation logic of
     --   the EIf expression
     ----------------------------------------
-    EIf c e e' -> undefined
+    EIf c e e' -> do
+      resc <- eval c
+      case resc of
+        LBool b -> if b then eval e else eval e'
+        _ -> Left "Condition must be boolean"
 
 -- | Should Succeed
 test_Exercise1_a =
