@@ -61,7 +61,7 @@ testAnd4 = Refl :: And 'False 'False :~: 'False
 --   Implement the IfThenElse type family that returns the 'a' type if the 'c'
 --   type is 'True, and the 'b' type if the 'c' type is 'False
 ----------------------------------------
-type family IfThenElse (c :: Bool) (a :: *) (b :: *) :: * where
+type family IfThenElse (c :: Bool) a b where
   IfThenElse 'True  a _ = a
   IfThenElse 'False _ b = b
 
@@ -92,7 +92,9 @@ type x + y = Add x y
 ----------------------------------------
 
 -- | Multiplication of type-level naturals
-type family Mult (x :: Nat) (y :: Nat) where
+type family Mult (x :: Nat) (y :: Nat) :: Nat where
+  Mult 'Zero n = 'Zero
+  Mult ('Succ n) m = Add m (Mult n m)
 
 type family (:*:) a b where
   x :*: y = Mult x y
@@ -109,6 +111,8 @@ testMult3 = Refl :: Mult Three Two :~: Six
 
 -- | Exponentiation of type-level naturals
 type family Exp (x :: Nat) (y :: Nat) :: Nat where
+  Exp n 'Zero = Succ 'Zero
+  Exp n ('Succ m) = Mult n (Exp n m)
 
 type (^) x y = Exp x y
 
