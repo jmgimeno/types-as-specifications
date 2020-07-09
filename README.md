@@ -140,3 +140,5 @@ Resources
 - [Basic Type Level Programming](https://www.parsonsmatt.org/2017/04/26/basic_type_level_programming_in_haskell.html)
   - Matt Parsons 
 
+- [Youtube](https://youtu.be/GECZE3UtWpc)
+- [Slides](https://slides.com/thomasdietert/types-as-specifications/fullscreen)

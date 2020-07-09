@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)https://slides.com/thomasdietert/types-as-specifications/fullscreen -->
+<html class="sl-root decks fullscreen mz-history mz-svg mz-localstorage mz-csspositionsticky mz-supports mz-cssanimations mz-backgroundsize mz-no-cssgridlegacy mz-cssgrid mz-flexbox mz-csstransforms mz-csstransforms3d mz-csstransitions mz-fullscreen mz-webpanimation loaded ua-mac ua-chrome reveal-full-page fonts-are-ready reveal-is-ready"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+		
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>Types as Specifications:</title>
+		<meta name="description" content="A presentation created with Slides.">
+		<meta property="og:title" content="Types as Specifications:">
+		<meta property="og:description" content="A presentation created with Slides.">
+		<meta property="og:site_name" content="Slides">
+		<meta property="og:image" content="https://s3.amazonaws.com/media-p.slid.es/thumbnails/bbdbae227bcfe37206a994af73ce3d8c/thumb.jpg?1559831643">
+		<meta property="og:type" content="article">
+		<meta property="og:url" content="https://slides.com/thomasdietert/types-as-specifications/fullscreen">
+		<meta property="fb:app_id" content="146002942236376">
+
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<link rel="stylesheet" media="all" href="./Types as Specifications__files/slides-5463dbbad1a68c6e9a85872698fd43e74078271bfd42f08aadf3e7324137e99c.css">
+		<link rel="stylesheet" media="all" href="./Types as Specifications__files/application-a400a72d2661f20b82bdf510f6d83c1dab71c0c1534f3052438d5442e736ee8a.css">
+		<link rel="stylesheet" media="all" href="./Types as Specifications__files/deck-v2-decc9fc7e7d11e7781743b9cbd47c0d6b223b3ba2ee96c784d0f1355d5e8b1d5.css">
+
+
+
+<style id="user-css-output" type="text/css"></style>
+		<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="82tEw43h49HPSfjD1S6WVY4RpYQCYAuDyvO0pLRhvunASGJxCLWb4KBR2DX5dQhyO9y3Wd1WLWwzk78H5MqXfQ==">
+		<script async="" src="./Types as Specifications__files/analytics.js"></script><script type="text/javascript">
+  if( navigator.doNotTrack !== '1' && !/dnt=1/.test( window.location.search ) ) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-39670045-1', 'auto');
+    ga('send', 'pageview');
+
+  }
+</script>
+			<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@Slides">
+	<meta name="twitter:title" content="Types as Specifications:">
+	<meta name="twitter:description" content="A presentation created with Slides.">
+	<meta name="twitter:image" content="https://s3.amazonaws.com/media-p.slid.es/thumbnails/bbdbae227bcfe37206a994af73ce3d8c/thumb.jpg?1559831643">
+
+	<link rel="stylesheet" href="./Types as Specifications__files/montserrat.css"><link rel="stylesheet" href="./Types as Specifications__files/opensans.css"><style type="text/css"></style><script type="text/javascript" src="./Types as Specifications__files/highlight-b633f6a6f8f33092c77cdeec43341175b82c93f333c1bf3d52ca8ccb5f62c727.js"></script><style></style><script type="text/javascript" src="./Types as Specifications__files/zoom-a5d62a27f9dd7ce53da982c71e540b906097da17f6aadaf4d6532ff16c39d0c4.js"></script><style type="text/css">.hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}</style></head>
+	<body class="reveal-viewport theme-font-montserrat theme-color-white-blue" style="--slide-width:960px; --slide-height:700px; transition: -webkit-transform 0.8s ease 0s;">
+		<div class="reveal slide focused has-vertical-slides has-horizontal-slides ready" role="application" data-transition-speed="default" data-background-transition="slide" style="">
+			<div class="slides" style="width: 960px; height: 700px; left: 50%; top: 50%; bottom: auto; right: auto; transform: translate(-50%, -50%) scale(1.00429);">
+				<section data-id="d3a66bd1c9c58da4566d8eac69d16b2f" class="present" style="display: block;"><div class="sl-block" data-block-type="text" style="width: 640px; left: 160px; top: 115px; height: auto;" data-block-id="6497d8fbe3de0750eb9325acdfe934ff"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>Types as Specifications:</h1>
+
+<h3>An Intro to Type-level Programming in Haskell</h3>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="4d0cd11ec39ad7f5634422555fd236a7" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 478px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; line-height: 0.858;" data-has-line-height="">
+<p><span style="font-size:0.7em">Thomas Dietert</span></p>
+
+<p><span style="font-size:0.7em">Lambda Conf 2019</span></p>
+
+<p><span style="font-size:0.7em">Boulder, CO</span></p>
+</div></div></section><section data-id="5016330038ab31244096d114a5341dd0" hidden="" aria-hidden="true" class="future" style="display: block;"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 108px; height: auto;" data-block-id="8f484ae5e816a808b34ef6344cf1166d"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>Setup</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 205px; height: auto;" data-block-id="99a7b67bd79049fda1ccf94710daddde"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 12;">
+<ul>
+	<li>Install <strong>stack</strong>:
+	<ul>
+		<li><a href="https://docs.haskellstack.org/en/stable/README/#how-to-install" target="_blank">https://docs.haskellstack.org/en/stable/README/#how-to-install</a></li>
+	</ul>
+	</li>
+	<li>Clone this repo:
+	<ul>
+		<li><a href="https://github.com/tdietert/types-as-specifications" target="_blank">https://github.com/tdietert/types-as-specifications</a></li>
+	</ul>
+	</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="440259a15f72893da52a7c4534c423bb" style="min-width: 30px; min-height: 30px; width: 650px; height: 86px; left: 155px; top: 463px;"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 13; font-size: 140%;"><pre class="haskell"><code class="hljs">.../types-<span class="hljs-keyword">as</span>-specifications $ stack setup
+.../types-<span class="hljs-keyword">as</span>-specicications $ stack build</code></pre></div></div></section><section data-id="7169c21d8613bfd0f8c3b5bcf09d141e" hidden="" aria-hidden="true" class="future" style="display: block;"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 126px; height: auto;" data-block-id="1722d8bd63965cbc75165f5079f97700"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>whoami</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 332px; left: 320px; top: 234px; height: auto;" data-block-id="2b7a7965f8e3e80ffb3c13a3560a7625"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11;">
+<ul>
+	<li>
+	<p>Software Engineer @ Freckle</p>
+	</li>
+	<li>
+	<p>Hardware Hobbyist</p>
+	</li>
+	<li>
+	<p>Boulderer</p>
+	</li>
+	<li>
+	<p>Reader</p>
+	</li>
+	<li>
+	<p>NE IPA drinker</p>
+	</li>
+</ul>
+</div></div></section><section data-id="8b795001a2cd67bc60f5a9272f56627a" hidden="" aria-hidden="true" class="future" style="display: none;"><div class="sl-block" data-block-type="text" data-block-id="443d3f41e3cc63106bddbe7b725ed823" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 174px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<p><span style="font-size:1.6em"><em><span style="text-align:left">“Everyone thinks they think, but if you don’t write down your thoughts you are fooling yourself"</span></em></span></p>
+
+<p>&nbsp;</p>
+
+<h3 style="text-align:right"><span style="text-align:left">- <em>Leslie Lamport</em></span></h3>
+</div></div></section><section class="stack future" data-id="b6cf6a3bf3ef54847c9be7628d62c0f6" hidden="" aria-hidden="true" style="display: none;"><section data-id="73c6ed93fb57325cab3737d074449495" style="display: none;"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 80px; height: auto;" data-block-id="add527c732dcaba4347c76e0799c4705"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2>Workshop Structure</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 493px; left: 240px; top: 192px; height: auto;" data-block-id="30ad94de020e441ca8a3109166a8b23e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; line-height: 1.495;" data-has-line-height="">
+<ul>
+	<li class="fragment" data-fragment-index="0">Introduction
+	<ul>
+		<li>Lecture &amp; Exercises</li>
+	</ul>
+	</li>
+	<li class="fragment" data-fragment-index="1">Type-level Programming
+	<ul>
+		<li>Lecture &amp; Exercises</li>
+	</ul>
+	</li>
+	<li class="fragment" data-fragment-index="2">Type-Indexed Lists
+	<ul>
+		<li class="fragment" data-fragment-index="2">Lecture &amp; Exercises</li>
+	</ul>
+	</li>
+	<li class="fragment" data-fragment-index="3">Discussion
+	<ul>
+		<li class="fragment" data-fragment-index="2">First-class TypeFamilies</li>
+		<li class="fragment" data-fragment-index="3">Type-level State Machines</li>
+	</ul>
+	</li>
+</ul>
+</div></div></section><section data-id="9bf525e33c6f5f682ad24606ac9e8576" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="513f1e57eacbf67df1c0063b2499382d"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1><span style="font-size:0.9em"><strong>Assumed Prerequisite Knowledge</strong></span></h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 280px; height: auto;" data-block-id="9a306cf3049c0fe3b94a1208eccf2e7d"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11;">
+<ul>
+	<li>
+	<h3>Static vs Dynamic Type Systems</h3>
+	</li>
+	<li>
+	<h3 style="text-align:left">Type Signatures</h3>
+	</li>
+	<li>
+	<h3 style="text-align:left">Algebraic Datatypes</h3>
+	</li>
+	<li>
+	<h3>Type classes</h3>
+	</li>
+	<li>
+	<h3>Constraints</h3>
+	</li>
+	<li>
+	<h3>Functors, Applicatives, &amp; Monads</h3>
+	</li>
+</ul>
+</div></div></section><section data-id="0bf3535637a5f6871c4aad51d54c3a22" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="text" style="width: 806px; left: 111px; top: 140px; height: auto;" data-block-id="fbda22ebb9c09dfa5ed23411e6b70691"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1><strong>Haskell</strong></h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 267px; height: auto;" data-block-id="02a2cbd62bf7455f7879cd1b410d4ab9"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 12;">
+<ul>
+	<li>
+	<h3>
+<strong>strong</strong>, <strong>static</strong> type system</h3>
+	</li>
+	<li>
+	<h3>Algebraic Datatypes (<strong>ADTs</strong>)</h3>
+	</li>
+	<li>
+	<h3>
+<strong>pure </strong>vs <em>impure </em>
+</h3>
+	</li>
+	<li>
+	<h3>
+<strong>GHC: </strong>an <em>extensible</em> compiler</h3>
+	</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="1c8207d838a8e895a6f70bf898bc5383" style="min-width: 4px; min-height: 4px; width: 103px; height: 73px; left: 258px; top: 152px;"><div class="sl-block-content" style="z-index: 13;"><img data-natural-width="602" data-natural-height="425" style="" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/937331/images/6207378/pasted-from-clipboard.png"></div></div></section></section><section class="stack future" data-id="cdd2d2bb08b682f3758dbb6159630252" hidden="" aria-hidden="true" style="display: none;"><section data-id="3f6d382991ecd0e22c5712500a6aa2e5" style="display: none;"><div class="sl-block" data-block-type="text" style="width: 880px; left: 40px; top: 213px; height: auto;" data-block-id="a2448aa888a103b8140e79cbd2eac8fb"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; line-height: 1.027;" dir="ui" data-has-line-height="">
+<h1><strong>Introduction:</strong></h1>
+
+<p><span style="font-size:1.6em"><strong>Types</strong> as <strong>program Specifications</strong></span></p>
+</div></div></section><section data-id="e1d9112d97d321cdb540ced373d3ec93" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 140px; height: auto;" data-block-id="892b85a65a880bbd7c7e5a88ab74bf78"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>What is a <strong>Specification</strong>?</h1>
+
+<p>&nbsp;</p>
+
+<h3>A specification is a <strong>formal description </strong>of <strong>program semantics</strong>
+</h3>
+
+<p>&nbsp;</p>
+
+<p><strong>What </strong>does your program <em>mean</em>?</p>
+</div></div></section><section data-id="23a2d2d15789a4df3b3568e1cc618be6" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 70px; height: auto;" data-block-id="2b7b0aefbc22f8748531feec5237272b"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>
+<em>Types </em>of Specifications</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 292px; height: auto;" data-block-id="eb30d579474dfffd34e0505d6687421c"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11;">
+<ul>
+	<li>
+	<p><span style="font-size:1.2em">Decision Tables</span></p>
+	</li>
+	<li>
+	<p><span style="font-size:1.2em">Business Requirements</span></p>
+	</li>
+	<li>
+	<p><span style="font-size:1.2em">RFCs</span></p>
+	</li>
+	<li>
+	<p><span style="font-size:1.2em">Documentation</span></p>
+	</li>
+	<li>
+	<p><span style="font-size:1.2em"><strong>Types</strong></span></p>
+	</li>
+</ul>
+</div></div></section><section data-id="9ba701d10fe829089481969b18cd867c" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 51px; height: auto;" data-block-id="b53f296c746fd122e17a3048fe6dff0d"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;" dir="ui">
+<h1>What is a <strong>type</strong>?</h1>
+
+<p>&nbsp;</p>
+
+<p><strong>Metadata</strong>&nbsp;associated with a particular <strong>region of memory locations</strong> that describe the <strong>structure</strong> of the data content of those memory locations.</p>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="e5b81567c285c36c96d8f6df8915f6ab" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 181px; top: 381px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;" data-fragment-index="0">
+<p>A <strong>set</strong> designating the <em>shape</em>, <em>form</em>, or <em>structure</em> of language level <strong>values</strong>.</p>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="dfba11ea97f38a9ed3a210b02f9f0314" style="height: auto; min-width: 30px; min-height: 30px; width: 552px; left: 204px; top: 542px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; line-height: 1.053;" data-has-line-height="" data-fragment-index="1">
+<p><span style="font-size:1.4em"><span style="text-align:left"><em>The Goal</em>: </span></span>&nbsp;<span style="font-size:1.4em"><span style="text-align:left">to </span><strong>make invalid states unrepresentable </strong></span></p>
+</div></div></section><section data-id="a53fabacca110f9735fe7519cc19e5a6" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="d9efed2f11fbe196ee8df9eeca984680"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1><span style="font-size:0.9em">Values, Types, &amp; Kinds</span></h1>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="207960b3717b9d6ac490310f20b9a6a9" style="height: auto; min-width: 30px; min-height: 30px; width: 440px; left: 144px; top: 173px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; line-height: 3.705; font-size: 119%; text-align: left;" data-has-line-height="" dir="ui">
+<p style="text-align:left"><span style="font-size:1.0em"><strong>values </strong>describe <em>data</em></span></p>
+
+<p style="text-align:left"><span style="font-size:1.0em"><strong>types </strong>describe <em>values</em></span></p>
+
+<p style="text-align:left"><span style="font-size:1.0em"><strong>kinds </strong>describe <em>types</em></span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="54a9c69c2f4b08f1a6f93a5f5597c221" style="height: auto; min-width: 30px; min-height: 30px; width: 597px; left: 210px; top: 431px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<p><span><span class="katex-display"><span class="katex notranslate"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>I</mi><mi>n</mi><mi>t</mi><mo>=</mo><mo stretchy="false">{</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo separator="true">,</mo><mo>−</mo><mn>1</mn><mo separator="true">,</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo separator="true">,</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mtext>&nbsp;</mtext><mn>9223372036854775807</mn><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex"> Int = \{..., -1, 0, 1, ... &nbsp;9223372036854775807 \}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.68333em; vertical-align: 0em;"></span><span class="mord mathdefault" style="margin-right: 0.07847em;">I</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 1em; vertical-align: -0.25em;"></span><span class="mopen">{</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord">−</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">&nbsp;</span><span class="mord">9</span><span class="mord">2</span><span class="mord">2</span><span class="mord">3</span><span class="mord">3</span><span class="mord">7</span><span class="mord">2</span><span class="mord">0</span><span class="mord">3</span><span class="mord">6</span><span class="mord">8</span><span class="mord">5</span><span class="mord">4</span><span class="mord">7</span><span class="mord">7</span><span class="mord">5</span><span class="mord">8</span><span class="mord">0</span><span class="mord">7</span><span class="mclose">}</span></span></span></span></span></span></p>
+</div></div>
+<div class="sl-block" data-block-type="math" data-block-id="976ea344864100003afba13e16c04c0d" style="width: auto; height: auto; min-width: 30px; min-height: 30px; left: 190px; top: 566px;"><div class="sl-block-content notranslate" style="z-index: 14; font-size: 61%;"><div class="math-output"><span class="katex notranslate"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable rowspacing="0.24999999999999992em" columnalign="right left" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mo>∗</mo><mo>=</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mtext>&nbsp;</mtext><mo stretchy="false">{</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo separator="true">,</mo><mi>I</mi><mi>n</mi><mi>t</mi><mo separator="true">,</mo><mi>M</mi><mi>a</mi><mi>y</mi><mi>b</mi><mi>e</mi><mtext>&nbsp;</mtext><mi>B</mi><mi>o</mi><mi>o</mi><mi>l</mi><mo separator="true">,</mo><mi>a</mi><mo>→</mo><mi>b</mi><mo separator="true">,</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo stretchy="false">}</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mo>∗</mo><mo>→</mo><mo>∗</mo><mo>=</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mtext>&nbsp;</mtext><mo stretchy="false">{</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo separator="true">,</mo><mi>M</mi><mi>a</mi><mi>y</mi><mi>b</mi><mi>e</mi><mo separator="true">,</mo><mi>E</mi><mi>i</mi><mi>t</mi><mi>h</mi><mi>e</mi><mi>r</mi><mtext>&nbsp;</mtext><mi>D</mi><mi>o</mi><mi>u</mi><mi>b</mi><mi>l</mi><mi>e</mi><mo separator="true">,</mo><mi>R</mi><mi>e</mi><mi>a</mi><mi>d</mi><mi>e</mi><mi>r</mi><mtext>&nbsp;</mtext><mi>I</mi><mi>n</mi><mi>t</mi><mo separator="true">,</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo stretchy="false">}</mo></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+* =&amp;\ \{..., Int, Maybe\ Bool, a \rightarrow b, ...\} \\
+* \rightarrow * =&amp;\ \{..., Maybe, Either \ Double, Reader \ Int, ...\}
+\end{aligned}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 3em; vertical-align: -1.25em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 1.75em;"><span class="" style="top: -3.91em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mord">∗</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span></span></span><span class="" style="top: -2.41em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mord">∗</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mord">∗</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 1.25em;"><span class=""></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 1.75em;"><span class="" style="top: -3.91em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mord"></span><span class="mspace">&nbsp;</span><span class="mopen">{</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord mathdefault" style="margin-right: 0.07847em;">I</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord mathdefault" style="margin-right: 0.10903em;">M</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right: 0.03588em;">y</span><span class="mord mathdefault">b</span><span class="mord mathdefault">e</span><span class="mspace">&nbsp;</span><span class="mord mathdefault" style="margin-right: 0.05017em;">B</span><span class="mord mathdefault">o</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right: 0.01968em;">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mord mathdefault">b</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mclose">}</span></span></span><span class="" style="top: -2.41em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mord"></span><span class="mspace">&nbsp;</span><span class="mopen">{</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord mathdefault" style="margin-right: 0.10903em;">M</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right: 0.03588em;">y</span><span class="mord mathdefault">b</span><span class="mord mathdefault">e</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord mathdefault" style="margin-right: 0.05764em;">E</span><span class="mord mathdefault">i</span><span class="mord mathdefault">t</span><span class="mord mathdefault">h</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right: 0.02778em;">r</span><span class="mspace">&nbsp;</span><span class="mord mathdefault" style="margin-right: 0.02778em;">D</span><span class="mord mathdefault">o</span><span class="mord mathdefault">u</span><span class="mord mathdefault">b</span><span class="mord mathdefault" style="margin-right: 0.01968em;">l</span><span class="mord mathdefault">e</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord mathdefault" style="margin-right: 0.00773em;">R</span><span class="mord mathdefault">e</span><span class="mord mathdefault">a</span><span class="mord mathdefault">d</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right: 0.02778em;">r</span><span class="mspace">&nbsp;</span><span class="mord mathdefault" style="margin-right: 0.07847em;">I</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mclose">}</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 1.25em;"><span class=""></span></span></span></span></span></span></span></span></span></span></div><div class="math-input">\begin{aligned}
+* =&amp;\ \{..., Int, Maybe\ Bool, a \rightarrow b, ...\} \\
+* \rightarrow * =&amp;\ \{..., Maybe, Either \ Double, Reader \ Int, ...\}
+\end{aligned}</div></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 597px; left: 210px; top: 294px;" data-block-id="ba5702f8739748aafff83e8717c385c7"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15;">
+<p><span><span class="katex-display"><span class="katex notranslate"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>17</mn><mo>=</mo><mtext>&lt;Language&nbsp;Specific&nbsp;Memory&nbsp;Layout&gt;</mtext></mrow><annotation encoding="application/x-tex">17 = \text{&lt;Language Specific Memory Layout&gt;}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.64444em; vertical-align: 0em;"></span><span class="mord">1</span><span class="mord">7</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.88888em; vertical-align: -0.19444em;"></span><span class="mord text"><span class="mord">&lt;Language&nbsp;Specific&nbsp;Memory&nbsp;Layout&gt;</span></span></span></span></span></span></span></p>
+</div></div></section><section data-id="d6a4c60a04a117107b110563ebd0a141" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="d83cf99e3455adcc687d485da3e92372"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1><span style="font-size:0.9em"><em>Types</em> of <strong>Values</strong></span></h1>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="8245272bbcf5c54677a61ab84b5a2962" style="min-width: 30px; min-height: 30px; width: 785px; height: 364px; left: 88px; top: 211px;"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 12; font-size: 173%;"><pre class="none"><code class="hljs elixir">Prelude&gt; <span class="hljs-symbol">:type</span> True
+True :: Bool
+Prelude&gt; <span class="hljs-symbol">:type</span> Just <span class="hljs-string">"Haskell"</span>
+Just <span class="hljs-string">"Haskell"</span> :: Maybe [Char]
+Prelude&gt; <span class="hljs-symbol">:type</span> <span class="hljs-number">5</span>
+<span class="hljs-number">5</span> :: Num p =&gt; p
+Prelude&gt; <span class="hljs-symbol">:type</span> fmap
+fmap :: Functor f =&gt; (a -&gt; b) -&gt; f a -&gt; f b
+Prelude&gt; <span class="hljs-symbol">:type</span> (&gt;&gt;=)
+(&gt;&gt;=) :: Monad m =&gt; m a -&gt; (a -&gt; m b) -&gt; m b</code></pre></div></div></section><section data-id="09acce2bd53c3e7c68fd3f7a50fbd256" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 70px; height: auto;" data-block-id="d770b798a6b090eb9adb42192e0deac2"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>
+<strong>Value </strong><em>Constructors</em>
+</h1>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="bcb2afd422bf8c73bfad968f6acae0bc" style="min-width: 30px; min-height: 30px; width: 412px; height: 363px; left: 80px; top: 210px;"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 12; font-size: 174%;"><pre class="haskell"><code class="hljs"><span class="hljs-class"><span class="hljs-keyword">data</span> <span class="hljs-type">Maybe</span> a </span>
+  = <span class="hljs-type">Just</span> a
+  | <span class="hljs-type">Nothing</span>
+
+<span class="hljs-class"><span class="hljs-keyword">data</span> <span class="hljs-type">Either</span> a b </span>
+  = <span class="hljs-type">Left</span> a
+  | <span class="hljs-type">Right</span> b
+
+<span class="hljs-class"><span class="hljs-keyword">newtype</span> <span class="hljs-type">T</span> m a </span>
+  = <span class="hljs-type">T</span> { unT :: m a }</code></pre></div></div>
+<div class="sl-block" data-block-type="code" data-block-id="7b5c44abb6a62469abd04449fbe7eaa2" style="min-width: 30px; min-height: 30px; width: 432px; height: 377px; left: 504px; top: 210px;"><div class="sl-block-content notranslate fragment" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 13; font-size: 174%;" data-fragment-index="0"><pre class="haskell"><code class="hljs"><span class="hljs-type">Prelude</span>&gt; :t <span class="hljs-type">Nothing</span>
+<span class="hljs-type">Nothing</span> :: <span class="hljs-type">Maybe</span> a
+<span class="hljs-type">Prelude</span>&gt; :t <span class="hljs-type">Just</span> 
+<span class="hljs-type">Just</span> :: a -&gt; <span class="hljs-type">Maybe</span> a
+<span class="hljs-type">Prelude</span>&gt; :t <span class="hljs-type">Left</span>
+<span class="hljs-type">Left</span> :: a -&gt; <span class="hljs-type">Either</span> a b
+<span class="hljs-type">Prelude</span>&gt; :t <span class="hljs-type">Right</span>
+<span class="hljs-type">Right</span> :: b -&gt; <span class="hljs-type">Either</span> a b
+<span class="hljs-type">Prelude</span>&gt; :t <span class="hljs-type">T</span>
+<span class="hljs-type">T</span> :: m a -&gt; <span class="hljs-type">T</span> m a</code></pre></div></div></section><section data-id="ce72b5f452214f0b5d9a86b91b74bace" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 69px; height: auto;" data-block-id="7aa73c13234559b09423ddd65724d107"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1><span style="font-size:0.9em"><em>Kinds</em> of <strong>Types</strong></span></h1>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 576px; height: 332px; left: 192px; top: 210px;" data-block-id="a2ff321fc6e644508675c9ccbec5e880"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 11; font-size: 197%;"><pre class="haskell"><code class="hljs"><span class="hljs-type">Prelude</span>&gt; :kind <span class="hljs-type">Int</span>
+<span class="hljs-type">Int</span> :: *
+<span class="hljs-type">Prelude</span>&gt; :kind <span class="hljs-type">Maybe</span>
+<span class="hljs-type">Maybe</span> :: * -&gt; *
+<span class="hljs-type">Prelude</span>&gt; :kind <span class="hljs-type">Either</span>
+<span class="hljs-type">Either</span> :: * -&gt; * -&gt; *
+<span class="hljs-type">Prelude</span>&gt; :kind <span class="hljs-type">Either</span> <span class="hljs-type">Bool</span>
+<span class="hljs-type">Either</span> <span class="hljs-type">Bool</span> :: * -&gt; *</code></pre></div></div></section><section data-id="161661195f9ced3198f638ef041e4ca9" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 43px; height: auto;" data-block-id="4557d88bbc1a832bedadce785ecf3895"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>
+<strong>Type </strong><em>Constructors</em>
+</h1>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 444px; height: 479px; left: 160px; top: 210px;" data-block-id="4bb2514340da539cd0c98c537baa87b7"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 12; font-size: 140%;"><pre class="haskell"><code class="hljs"><span class="hljs-class"><span class="hljs-keyword">data</span> <span class="hljs-type">Maybe</span> a </span>
+  = <span class="hljs-type">Just</span> a
+  | <span class="hljs-type">Nothing</span>
+
+<span class="hljs-class"><span class="hljs-keyword">data</span> <span class="hljs-type">Either</span> a b </span>
+  = <span class="hljs-type">Left</span> a
+  | <span class="hljs-type">Right</span> b
+
+<span class="hljs-class"><span class="hljs-keyword">newtype</span> <span class="hljs-type">T</span> m a </span>
+  = <span class="hljs-type">T</span> { unT :: m a }
+
+<span class="hljs-class"><span class="hljs-keyword">data</span> <span class="hljs-type">App</span> m f a b  </span>
+  = <span class="hljs-type">App</span> 
+  { x :: f a
+  , y :: m a b
+   } </code></pre></div></div>
+<div class="sl-block" data-block-type="code" data-block-id="d44e9ffd24bcc08884260f4fd75784a1" style="min-width: 30px; min-height: 30px; width: 367px; height: 379px; left: 513px; top: 231px;"><div class="sl-block-content notranslate fragment" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 13; font-size: 140%;" data-fragment-index="0"><pre class="haskell"><code class="hljs"><span class="hljs-type">Prelude</span>&gt; :k <span class="hljs-type">Maybe</span>
+<span class="hljs-type">Maybe</span> :: * -&gt; *
+<span class="hljs-type">Prelude</span>&gt; :k <span class="hljs-type">Either</span>
+<span class="hljs-type">Either</span> :: * -&gt; * -&gt; *
+<span class="hljs-type">Prelude</span>&gt; :k <span class="hljs-type">T</span>
+<span class="hljs-type">T</span> :: (* -&gt; *) -&gt; * -&gt; *
+<span class="hljs-type">Prelude</span>&gt; :k <span class="hljs-type">App</span>
+<span class="hljs-type">App</span>  
+  :: (* -&gt; * -&gt; *) 
+  -&gt; (* -&gt; *) 
+  -&gt; * 
+  -&gt; * 
+  -&gt; *</code></pre></div></div></section><section data-id="04a606ec746e1fbc0581367b49d6f1e6" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 43px; height: auto;" data-block-id="f6431861d5f182be1f1ea3769325ac3f"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>
+<strong>Type </strong><em>Constructors</em>
+</h1>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 488px; height: 323px; left: 80px; top: 259px;" data-block-id="70686ea33cd8533bb85ac255ed57ed7d"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 12; font-size: 140%;"><pre class="haskell"><code class="hljs"><span class="hljs-class"><span class="hljs-keyword">data</span> <span class="hljs-type">Maybe</span> (<span class="hljs-title">a</span> :: *) </span>
+  = <span class="hljs-type">Just</span> a
+  | <span class="hljs-type">Nothing</span>
+
+<span class="hljs-class"><span class="hljs-keyword">data</span> <span class="hljs-type">Either</span> (<span class="hljs-title">a</span> :: *) (<span class="hljs-title">b</span> :: *) </span>
+  = <span class="hljs-type">Left</span> a
+  | <span class="hljs-type">Right</span> b
+
+<span class="hljs-class"><span class="hljs-keyword">newtype</span> <span class="hljs-type">T</span> (<span class="hljs-title">m</span> :: * -&gt; *) (<span class="hljs-title">a</span> :: *) </span>
+  = <span class="hljs-type">T</span> { unT :: m a }</code></pre></div></div>
+<div class="sl-block" data-block-type="code" data-block-id="e4674e5ea7a48405bb2bb02ec7e58a0f" style="min-width: 30px; min-height: 30px; width: 671px; height: 80px; left: 160px; top: 147px;"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 13; font-size: 210%;"><pre class="haskell"><code class="hljs"><span class="hljs-meta">{-# LANGUAGE KindSignatures #-}</span>
+</code></pre></div></div>
+<div class="sl-block" data-block-type="code" data-block-id="3bacf7d008985baf3d6060fb56f8edd6" style="min-width: 30px; min-height: 30px; width: 376px; height: 323px; left: 550px; top: 259px;"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 14; font-size: 140%;"><pre class="haskell"><code class="hljs"><span class="hljs-class"><span class="hljs-keyword">data</span> <span class="hljs-type">App</span> </span>
+  (m :: * -&gt; * -&gt; *) 
+  (f :: * -&gt; *) 
+  (a :: *) 
+  (b :: *) 
+  = <span class="hljs-type">App</span> 
+  { x :: f a
+  , y :: m a b
+  } </code></pre></div></div></section></section><section class="stack future" data-id="095debbcec61e23416c738394946d058" hidden="" aria-hidden="true" style="display: none;"><section data-id="055f89961b9adbcbbac77e2558eb432e" style="display: none;"><div class="sl-block" data-block-type="text" style="width: 766px; left: 97px; top: 58px; height: auto;" data-block-id="e1e180aea5447f095a540dc9efbf0eaa"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11; line-height: 1.053; font-size: 109%;" data-has-line-height="">
+<h2>
+<strong><span style="font-size:0.9em">Intro </span></strong><span style="font-size:0.9em">to</span>
+</h2>
+
+<h2>
+<em>Type-level</em><strong> </strong>Programming<strong> </strong>in <strong>Haskell</strong>
+</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 438px; left: 258px; top: 329px; height: auto;" data-block-id="9b0a3e76196ae08d883954287b5dc208"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; font-size: 140%;" dir="ui">
+<ul>
+	<li>Phantom Types</li>
+	<li>GADTs ​</li>
+</ul>
+</div></div>
+
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 481px; height: auto;" data-block-id="79661c070de662f84aff32d3b32f3ebe"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 14;">
+<h3><span style="font-size:0.9em">Language Extensions</span></h3>
+</div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 594px; height: 101px; left: 189px; top: 548px;" data-block-id="977fbc586cb85aa6f9723bd865941f81"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 15; font-size: 150%;"><pre class="haskell"><code class="hljs"><span class="hljs-meta">{-# LANGUAGE MultiParamTypeClasses #-}</span>
+<span class="hljs-meta">{-# LANGUAGE GADTs                 #-}</span></code></pre></div></div></section><section data-id="bf606dc1264fff971b2f296cc7e8a678" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="text" style="width: 806px; left: 74px; top: 70px; height: auto;" data-block-id="c3dfaf5566f870eee563cd40e0eafdb2"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>
+<strong>Phantom</strong> Types</h1>
+</div></div>
+
+
+<div class="sl-block" data-block-type="text" style="height: auto; width: 570px; left: 195px; top: 210px;" data-block-id="f7fe232b417af00e4684124aef36b8f4"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; line-height: 1.43;" data-has-line-height="">
+<ul>
+	<li style="text-align:left">Allow us to attach <strong>extra information</strong><em> </em>to <strong>all values</strong> of a datatype <strong>without modifying their structure</strong>.</li>
+	<li style="text-align:left">
+<strong>Notably</strong>, "phantom" type arguments attach this information to <em>all</em>&nbsp;value constructors.</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="b14ce35f6f01cc24a776d6bf81f92f8a" style="min-width: 30px; min-height: 30px; width: 475px; height: 115px; left: 279px; top: 503px;"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 13; font-size: 198%;"><pre class="haskell"><code class="hljs"><span class="hljs-comment">-- Example:</span>
+<span class="hljs-class"><span class="hljs-keyword">data</span> <span class="hljs-type">Proxy</span> a = <span class="hljs-type">Proxy</span></span></code></pre></div></div></section><section data-id="24103b64a2c40bafe52eb6801c46a84d" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="0be03b3e8f64c098d6f9d040be3bcd59"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; line-height: 0.897;" data-has-line-height="">
+<h1>
+<strong>Phantom</strong> Types: <span style="font-size:0.7em">Motivation</span>
+</h1>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 404px; height: 306px; left: 46px; top: 270px;" data-block-id="f30c0ebf05607a64c6c0c1324333dc17"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 11; font-size: 120%;"><pre class="haskell"><code class="hljs"><span class="hljs-class"><span class="hljs-keyword">data</span> <span class="hljs-type">DistanceUnit</span> </span>
+  = <span class="hljs-type">Miles</span> 
+  | <span class="hljs-type">Kilometers</span>
+  <span class="hljs-keyword">deriving</span> <span class="hljs-type">Eq</span>
+
+<span class="hljs-class"><span class="hljs-keyword">data</span> <span class="hljs-type">Distance</span> </span>
+  = <span class="hljs-type">Distance</span>
+  { distanceUnit :: <span class="hljs-type">DistanceUnit</span>
+  , distanceValue :: <span class="hljs-type">Double</span>
+  } </code></pre></div></div>
+
+<div class="sl-block" data-block-type="code" style="width: 481px; height: 337px; left: 450px; top: 263px;" data-block-id="7b6ecbeef4f2c314f40a3c5e966843a3"><div class="sl-block-content notranslate fragment" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 12; font-size: 120%;" data-fragment-index="0"><pre class="haskell"><code class="hljs"><span class="hljs-title">addDistances</span>
+  :: <span class="hljs-type">Distance</span>
+  -&gt; <span class="hljs-type">Distance</span>
+  -&gt; <span class="hljs-type">Either</span> [<span class="hljs-type">Char</span>] <span class="hljs-type">Distance</span>
+<span class="hljs-title">addDistances</span> d1 d2 
+  | distanceUnit d1 == distanceUnit d2 
+    = <span class="hljs-type">Right</span>
+    $ <span class="hljs-type">Distance</span>
+    { distanceUnit = d1
+    , distanceValue = d1 + d2
+    }
+  | otherwise 
+    = <span class="hljs-type">Left</span> <span class="hljs-string">"Distance units unequal!"</span> </code></pre></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 489px; height: 80px; left: 442px; top: 505px;" data-block-id="12268a8a72ec7db5afd1915c6e54fbf0"><div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)" data-shape-stretch="true" style="z-index: 13;" data-shape-stroke-color="#cc4125" data-shape-stroke-width="5px" data-fragment-index="1"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 489 80"><defs><clippath id="shape-mask-4-1559179879729"><rect width="489" height="80" rx="0" ry="0"></rect></clippath></defs><rect width="489" height="80" rx="0" ry="0" clip-path="url(#shape-mask-4-1559179879729)" class="shape-element" fill="rgba(0, 0, 0, 0)" stroke="#cc4125" stroke-width="10"></rect></svg></div></div></section><section data-id="9defc3555120025bdc366cca5c0c2c37" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 70px; height: auto;" data-block-id="c5bde2b1bcfbaafe2011e26a656a0e43"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11; line-height: 0.897;" data-has-line-height="">
+<h1>
+<strong>Phantom</strong> Types: <span style="font-size:0.7em">Motivation</span>
+</h1>
+</div></div>
+
+
+<div class="sl-block" data-block-type="code" data-block-id="19e76614ed497593dea913bf521fd513" style="min-width: 30px; min-height: 30px; width: 743px; height: 91px; left: 80px; top: 235px;"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 12; font-size: 140%;"><pre class="haskell"><code class="hljs"><span class="hljs-comment">-- This doesn't work very well...</span>
+<span class="hljs-title">convert</span> :: <span class="hljs-type">Distance</span> -&gt; <span class="hljs-type">Distance</span></code></pre></div></div>
+<div class="sl-block" data-block-type="code" data-block-id="fff5ec93082bdd252311698d1dd1d9b8" style="min-width: 30px; min-height: 30px; width: 796px; height: 138px; left: 80px; top: 332px;"><div class="sl-block-content notranslate fragment" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 13; font-size: 140%;" data-fragment-index="0"><pre class="haskell"><code class="hljs"><span class="hljs-comment">-- | Wrap the underlying conversion function</span>
+<span class="hljs-title">convertDistance</span> :: <span class="hljs-type">Distance</span> -&gt; <span class="hljs-type">DistanceUnit</span> -&gt; <span class="hljs-type">Distance</span>
+<span class="hljs-title">convertDistance</span> (<span class="hljs-type">Distance</span> fromUnits v) toUnits = 
+  convert v fromUnits toUnits</code></pre></div></div>
+<div class="sl-block" data-block-type="code" data-block-id="c1e6a4b8977c1b711d36ec63f4694423" style="min-width: 30px; min-height: 30px; width: 858px; height: 156px; left: 80px; top: 482px;"><div class="sl-block-content notranslate fragment" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 14; font-size: 140%;" data-fragment-index="1"><pre class="haskell"><code class="hljs"><span class="hljs-comment">-- | This is better, but more granular than we want</span>
+<span class="hljs-title">convert</span> :: <span class="hljs-type">Double</span> -&gt; <span class="hljs-type">DistanceUnit</span> -&gt; <span class="hljs-type">DistanceUnit</span> -&gt; <span class="hljs-type">Double</span>
+<span class="hljs-title">convert</span> v <span class="hljs-type">Miles</span>      <span class="hljs-type">Kilometers</span> = v * <span class="hljs-number">1.60934</span>
+<span class="hljs-title">convert</span> v <span class="hljs-type">Kilometers</span> <span class="hljs-type">Miles</span>      = v * <span class="hljs-number">0.621371</span>
+</code></pre></div></div></section><section data-id="6314453063981ec3b222bea04ecc3cbd" class="future" aria-hidden="true" style="display: none;">
+
+
+<div class="sl-block" data-block-type="code" data-block-id="2d03fcc9dee5958ac99156ddfaf0043f" style="min-width: 30px; min-height: 30px; width: 712px; height: 368px; left: 149px; top: 220px;"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 11; font-size: 150%;"><pre class="haskell"><code class="hljs"><span class="hljs-class"><span class="hljs-keyword">data</span> <span class="hljs-type">PDistance</span> a</span>
+  = <span class="hljs-type">PDistance</span>
+  { pdistanceValue :: <span class="hljs-type">Double</span>
+  }
+
+<span class="hljs-title">addPDistances</span>
+  :: <span class="hljs-type">PDistance</span> a 
+  -&gt; <span class="hljs-type">PDistance</span> a 
+  -&gt; <span class="hljs-type">PDistance</span> a
+<span class="hljs-title">addPDistances</span> (<span class="hljs-type">PDistance</span> pv1) (<span class="hljs-type">PDistance</span> pv2) 
+  = <span class="hljs-type">PDistance</span> (pv1 + pv2)</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 51px; height: auto;" data-block-id="fcbcb4aa172d637527c55506acc51286"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 12; line-height: 0.897;" data-has-line-height="">
+<h1>
+<strong>Phantom</strong> Types: <span style="font-size:0.7em">Solution</span>
+</h1>
+</div></div>
+<div class="sl-block" data-block-type="line" data-block-id="4deff32ab648700b0cd1754d8cbfae67" style="width: auto; height: auto; min-width: 1px; min-height: 1px; left: 216px; top: 545px;"><div class="sl-block-content" data-line-x1="-104" data-line-y1="0" data-line-x2="200" data-line-y2="0" data-line-color="#cc4125" data-line-start-type="none" data-line-end-type="none" style="z-index: 13;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveAspectRatio="xMidYMid" width="304" height="1" viewBox="-104 0 304 1"><line stroke="rgba(0,0,0,0)" stroke-width="15" x1="-104" y1="0" x2="200" y2="0"></line><line stroke="#cc4125" stroke-width="2" x1="-104" y1="0" x2="200" y2="0"></line></svg></div></div></section><section data-id="73f0e27b8e682e4b88dc95d7f761a95e" class="future" aria-hidden="true" style="display: none;">
+
+
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 54px; height: auto;" data-block-id="6997630a914d73843216eeccee5b5fab"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11; line-height: 0.897;" data-has-line-height="">
+<h1>
+<strong>Phantom</strong> Types: <span style="font-size:0.7em">Solution</span>
+</h1>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="9f7cbbaa2127e2e0ad09e45afec6ed3a" style="min-width: 30px; min-height: 30px; width: 517px; height: 434px; left: 270px; top: 211px;"><div class="sl-block-style" style="z-index: 12; transform: rotate(360deg);"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 12; font-size: 150%;"><pre class="haskell"><code class="hljs"><span class="hljs-class"><span class="hljs-keyword">data</span> <span class="hljs-type">Miles</span></span>
+<span class="hljs-class"><span class="hljs-keyword">data</span> <span class="hljs-type">Kilometers</span></span>
+
+<span class="hljs-title">milesToKilometers</span> 
+  :: <span class="hljs-type">PDistance</span> <span class="hljs-type">Miles</span> 
+  -&gt; <span class="hljs-type">PDistance</span> <span class="hljs-type">Kilometers</span>
+<span class="hljs-title">milesToKilometers</span> (<span class="hljs-type">PDistance</span> v) 
+  = <span class="hljs-type">PDistance</span> (v * <span class="hljs-number">1.60934</span>)
+
+<span class="hljs-title">kilometersToMiles</span> 
+  :: <span class="hljs-type">PDistance</span> <span class="hljs-type">Kilometers</span> 
+  -&gt; <span class="hljs-type">PDistance</span> <span class="hljs-type">Miles</span> 
+<span class="hljs-title">kilometersToMiles</span> (<span class="hljs-type">PDistance</span> v) 
+  = <span class="hljs-type">PDistance</span> (v * <span class="hljs-number">0.621371</span>)</code></pre></div></div></div>
+</section><section data-id="1a3a8818d01f6f60341d60c9ca351ff5" class="future" aria-hidden="true" style="display: none;">
+
+
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 54px; height: auto;" data-block-id="1138833772ccf16652b645c5099e57d0"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; line-height: 0.897;" data-has-line-height="">
+<h1>
+<strong>Phantom</strong> Types: <span style="font-size:0.7em">Solution</span>
+</h1>
+</div></div>
+
+<div class="sl-block" data-block-type="code" style="width: 631px; height: 358px; left: 160px; top: 241px;" data-block-id="4517fadba2d304ec10f53f40c0b5411c"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 12; font-size: 150%;"><pre class="haskell"><code class="hljs"><span class="hljs-meta">{-# LANGUAGE MultiParamTypeClasses #-}</span>
+<span class="hljs-class">
+<span class="hljs-keyword">class</span> <span class="hljs-type">PConvert</span> a b <span class="hljs-keyword">where</span></span>
+  pconvert :: <span class="hljs-type">PDistance</span> a -&gt; <span class="hljs-type">PDistance</span> b
+<span class="hljs-class">
+<span class="hljs-keyword">instance</span> <span class="hljs-type">PConvert</span> <span class="hljs-type">Miles</span> <span class="hljs-type">Kilometers</span> <span class="hljs-keyword">where</span></span>
+  pconvert = milesToKilometers
+<span class="hljs-class">
+<span class="hljs-keyword">instance</span> <span class="hljs-type">PConvert</span> <span class="hljs-type">Kilometers</span> <span class="hljs-type">Miles</span> <span class="hljs-keyword">where</span></span>
+  pconvert = kilometersToMiles</code></pre></div></div></section><section data-id="6d37520f9febad41073ca93f82efe952" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="text" style="width: 806px; left: 89px; top: 48px; height: auto;" data-block-id="c78e462a57439bca3f281addd286fbb2"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2><strong>{-# LANGUAGE GADTs #-}</strong></h2>
+</div></div>
+
+<div class="sl-block" data-block-type="text" data-block-id="65d5aa2bd45441855660215ac28728ac" style="height: auto; min-width: 30px; min-height: 30px; width: 828px; left: 78px; top: 122px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;" data-fragment-index="0">
+<h3>(Generalized Algebraic Datatypes)</h3>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="342b0fb66cb56ab04ac715de0ef9e1f9" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 396px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<ul>
+	<li class="fragment" data-fragment-index="3">We can <strong>embed type information </strong>for datatype constructor <em>return types</em>
+</li>
+	<li class="fragment" data-fragment-index="4">Constructor <strong>return types</strong> can <em>differ</em>
+</li>
+	<li class="fragment" data-fragment-index="5">
+<strong>Pattern matching </strong>on GADT constructors <strong>can determine</strong> the <em>return type </em>of the function <em>case expression</em>
+</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="53dd4e7336b5b0349b2347b4675d9f1b" style="min-width: 30px; min-height: 30px; width: 422px; height: 145px; left: 473px; top: 210px;"><div class="sl-block-content notranslate fragment" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 13; font-size: 150%;" data-fragment-index="2"><pre class="haskell"><code class="hljs"><span class="hljs-comment">-- | GADT syntax</span>
+<span class="hljs-class"><span class="hljs-keyword">data</span> <span class="hljs-type">Either</span> a b where</span>
+  <span class="hljs-type">Left</span>  :: a -&gt; <span class="hljs-type">Either</span> a b
+  <span class="hljs-type">Right</span> :: b -&gt; <span class="hljs-type">Either</span> a b</code></pre></div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 266px; height: 145px; left: 134px; top: 210px;" data-block-id="5a5296cc8b7bf60f66de65e2df08699f"><div class="sl-block-content notranslate fragment" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 15; font-size: 150%;" data-fragment-index="1"><pre class="haskell"><code class="hljs"><span class="hljs-comment">-- | ADT syntax</span>
+<span class="hljs-class"><span class="hljs-keyword">data</span> <span class="hljs-type">Either</span> a b </span>
+  = <span class="hljs-type">Left</span> a
+  | <span class="hljs-type">Right</span> b</code></pre></div></div></section><section data-id="f627edec02585495563a1e85a9aa2f67" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="code" data-block-id="0de670944c0ff22dab778ed2d30203fc" style="min-width: 30px; min-height: 30px; width: 533px; height: 160px; left: 214px; top: 249px;"><div class="sl-block-style" style="z-index: 11; transform: rotate(360deg);"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 11; font-size: 150%;"><pre class="haskell"><code class="hljs"><span class="hljs-comment">-- Distance Units as "Phantom" type</span>
+<span class="hljs-class"><span class="hljs-keyword">data</span> <span class="hljs-type">PDistance</span> a</span>
+  = <span class="hljs-type">PDistance</span>
+  { pdistanceValue :: <span class="hljs-type">Double</span>
+  }</code></pre></div></div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 595px; height: 109px; left: 205px; top: 474px;" data-block-id="11792730617aed668bc81de0a0ff7924"><div class="sl-block-content notranslate fragment" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 12; font-size: 150%;" data-fragment-index="0"><pre class="haskell"><code class="hljs"><span class="hljs-comment">-- Distance Units as Generalized Type</span>
+<span class="hljs-class"><span class="hljs-keyword">data</span> <span class="hljs-type">GDistance</span> a where</span>
+  <span class="hljs-type">GDistance</span> :: <span class="hljs-type">Double</span> -&gt; <span class="hljs-type">GDistance</span> a
+</code></pre></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="c726c5374759202d5664d20051dc27a7" style="height: auto; min-width: 30px; min-height: 30px; width: 721px; left: 120px; top: 70px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; line-height: 0.91;" data-has-line-height="">
+<h2>
+<strong>GADT </strong>Translation</h2>
+
+<h3>(PDistance =&gt; GDistance)</h3>
+</div></div></section><section data-id="0a2f44a83604182c08d5123ed468b7f5" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="text" style="width: 806px; left: 89px; top: 48px; height: auto;" data-block-id="6612b4048eba84c8b3a149aed237356a"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h2><strong>{-# LANGUAGE GADTs #-}</strong></h2>
+</div></div>
+
+<div class="sl-block" data-block-type="text" style="height: auto; width: 828px; left: 78px; top: 122px;" data-block-id="7cbb38b6b36558dedbffebe52b4c0fca"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;" data-fragment-index="0">
+<h3>(Generalized Algebraic Datatypes)</h3>
+</div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 629px; height: 479px; left: 199px; top: 193px;" data-block-id="875c391209f05a6f0c67c680d6eefe58"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 13; font-size: 150%;"><pre class="haskell"><code class="hljs"><span class="hljs-class"><span class="hljs-keyword">data</span> <span class="hljs-type">Miles</span></span>
+<span class="hljs-class"><span class="hljs-keyword">data</span> <span class="hljs-type">Kilometers</span></span>
+
+<span class="hljs-class"><span class="hljs-keyword">data</span> <span class="hljs-type">GDistance</span> a where</span>
+  <span class="hljs-type">GDistance</span> :: <span class="hljs-type">Double</span> -&gt; <span class="hljs-type">GDistance</span> a
+<span class="hljs-class">
+<span class="hljs-keyword">class</span> <span class="hljs-type">GConvert</span> a b <span class="hljs-keyword">where</span></span>
+  gconvert :: <span class="hljs-type">GDistance</span> a -&gt; <span class="hljs-type">GDistance</span> b
+<span class="hljs-class">
+<span class="hljs-keyword">instance</span> <span class="hljs-type">GConvert</span> <span class="hljs-type">Miles</span> <span class="hljs-type">Kilometers</span> <span class="hljs-keyword">where</span></span>
+  gconvert (<span class="hljs-type">GDistance</span> v) 
+    = <span class="hljs-type">GDistance</span> (v * <span class="hljs-number">1.60934</span>)
+<span class="hljs-class">
+<span class="hljs-keyword">instance</span> <span class="hljs-type">GConvert</span> <span class="hljs-type">Kilometers</span> <span class="hljs-type">Miles</span> <span class="hljs-keyword">where</span></span>
+  gconvert (<span class="hljs-type">GDistance</span> v) 
+    = <span class="hljs-type">GDistance</span> (v * <span class="hljs-number">0.621371</span>)</code></pre></div></div></section><section data-id="4cb22e53d82f0838e5603bdf38add0dd" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 46px; height: auto;" data-block-id="4c543372ca3304cf0abbe092226fd03f"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11; line-height: 0.975;" data-has-line-height="">
+<h1>
+<strong>GADTs: </strong>Motivation</h1>
+
+<h2>No <strong>Phantom </strong><em>types</em>&nbsp;</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="7fe74892721dc4074e223dd378d30603" style="min-width: 30px; min-height: 30px; width: 363px; height: 313px; left: 517px; top: 280px;"><div class="sl-block-content notranslate fragment" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 12; font-size: 140%;" data-fragment-index="0"><pre class="haskell"><code class="hljs"><span class="hljs-class"><span class="hljs-keyword">data</span> <span class="hljs-type">ELit</span> </span>
+  = <span class="hljs-type">LBool</span> <span class="hljs-type">Bool</span>
+  | <span class="hljs-type">LInt</span> <span class="hljs-type">Int</span>
+
+<span class="hljs-class"><span class="hljs-keyword">data</span> <span class="hljs-type">Expr</span> </span>
+  = <span class="hljs-type">ELit</span> <span class="hljs-type">ELit</span>
+  | <span class="hljs-type">EAdd</span> <span class="hljs-type">Expr</span> <span class="hljs-type">Expr</span>
+  | <span class="hljs-type">EAnd</span> <span class="hljs-type">Expr</span> <span class="hljs-type">Expr</span>
+  | <span class="hljs-type">EEq</span> <span class="hljs-type">Expr</span> <span class="hljs-type">Expr</span> 
+  | <span class="hljs-type">EIf</span> <span class="hljs-type">Expr</span> <span class="hljs-type">Expr</span> <span class="hljs-type">Expr</span></code></pre></div></div>
+<div class="sl-block" data-block-type="math" data-block-id="df42fee8730fa73ed561157435199b53" style="width: auto; height: auto; min-width: 30px; min-height: 30px; left: 147px; top: 280px;"><div class="sl-block-content notranslate" style="z-index: 13; font-size: 55%;"><div class="math-output"><span class="katex notranslate"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable rowspacing="0.24999999999999992em" columnalign="right left" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>x</mi><mtext>&nbsp;</mtext><mo>:</mo><mo>=</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mtext>&nbsp;</mtext><mi>T</mi><mi>r</mi><mi>u</mi><mi>e</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mo lspace="0em" rspace="0em">∣</mo></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mtext>&nbsp;</mtext><mi>F</mi><mi>a</mi><mi>l</mi><mi>s</mi><mi>e</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mo lspace="0em" rspace="0em">∣</mo></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mtext>&nbsp;</mtext><mi>n</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>e</mi><mtext>&nbsp;</mtext><mo>:</mo><mo>=</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mtext>&nbsp;</mtext><mi>x</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mo lspace="0em" rspace="0em">∣</mo></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mtext>&nbsp;</mtext><mi>e</mi><mo>+</mo><msup><mi>e</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mo lspace="0em" rspace="0em">∣</mo></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mtext>&nbsp;</mtext><mi>e</mi><mo>∧</mo><msup><mi>e</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mo lspace="0em" rspace="0em">∣</mo></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mtext>&nbsp;</mtext><mi>e</mi><mo>=</mo><mo>=</mo><msup><mi>e</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mo lspace="0em" rspace="0em">∣</mo></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mtext>&nbsp;if&nbsp;</mtext><mi>e</mi><mtext>&nbsp;then&nbsp;</mtext><msup><mi>e</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mtext>&nbsp;else&nbsp;</mtext><msup><mi>e</mi><mrow><mo mathvariant="normal">′</mo><mo mathvariant="normal">′</mo></mrow></msup></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+x \ :=&amp; \ True \\
+\mid&amp; \ False \\
+\mid&amp; \ n \\
+
+e \ :=&amp; \ x \\
+\mid&amp; \ e + e' \\
+\mid&amp; \ e \land e' \\
+\mid&amp; \ e == e' \\
+\mid&amp; \ \text{if} \ e \ \text{then} \ e' \ \text{else} \ e''
+\end{aligned}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 12em; vertical-align: -5.75em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 6.25em;"><span class="" style="top: -8.41em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mspace">&nbsp;</span><span class="mrel">:</span><span class="mrel">=</span></span></span><span class="" style="top: -6.91em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mrel">∣</span></span></span><span class="" style="top: -5.41em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mrel">∣</span></span></span><span class="" style="top: -3.91em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mord mathdefault">e</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mspace">&nbsp;</span><span class="mrel">:</span><span class="mrel">=</span></span></span><span class="" style="top: -2.41em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mrel">∣</span></span></span><span class="" style="top: -0.91em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mrel">∣</span></span></span><span class="" style="top: 0.59em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mrel">∣</span></span></span><span class="" style="top: 2.09em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mrel">∣</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 5.75em;"><span class=""></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 6.25em;"><span class="" style="top: -8.41em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mord"></span><span class="mspace">&nbsp;</span><span class="mord mathdefault" style="margin-right: 0.13889em;">T</span><span class="mord mathdefault" style="margin-right: 0.02778em;">r</span><span class="mord mathdefault">u</span><span class="mord mathdefault">e</span></span></span><span class="" style="top: -6.91em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mord"></span><span class="mspace">&nbsp;</span><span class="mord mathdefault" style="margin-right: 0.13889em;">F</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right: 0.01968em;">l</span><span class="mord mathdefault">s</span><span class="mord mathdefault">e</span></span></span><span class="" style="top: -5.41em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mord"></span><span class="mspace">&nbsp;</span><span class="mord mathdefault">n</span></span></span><span class="" style="top: -3.91em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mord"></span><span class="mspace">&nbsp;</span><span class="mord mathdefault">x</span></span></span><span class="" style="top: -2.41em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mord"></span><span class="mspace">&nbsp;</span><span class="mord mathdefault">e</span><span class="mspace" style="margin-right: 0.222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right: 0.222222em;"></span><span class="mord"><span class="mord mathdefault">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.801892em;"><span class="" style="top: -3.113em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span><span class="" style="top: -0.91em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mord"></span><span class="mspace">&nbsp;</span><span class="mord mathdefault">e</span><span class="mspace" style="margin-right: 0.222222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right: 0.222222em;"></span><span class="mord"><span class="mord mathdefault">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.801892em;"><span class="" style="top: -3.113em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span><span class="" style="top: 0.59em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mord"></span><span class="mspace">&nbsp;</span><span class="mord mathdefault">e</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mord"><span class="mord mathdefault">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.801892em;"><span class="" style="top: -3.113em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span><span class="" style="top: 2.09em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mord"></span><span class="mspace">&nbsp;</span><span class="mord text"><span class="mord">if</span></span><span class="mspace">&nbsp;</span><span class="mord mathdefault">e</span><span class="mspace">&nbsp;</span><span class="mord text"><span class="mord">then</span></span><span class="mspace">&nbsp;</span><span class="mord"><span class="mord mathdefault">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.801892em;"><span class="" style="top: -3.113em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mspace">&nbsp;</span><span class="mord text"><span class="mord">else</span></span><span class="mspace">&nbsp;</span><span class="mord"><span class="mord mathdefault">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.801892em;"><span class="" style="top: -3.113em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 5.75em;"><span class=""></span></span></span></span></span></span></span></span></span></span></div><div class="math-input">\begin{aligned}
+x \ :=&amp; \ True \\
+\mid&amp; \ False \\
+\mid&amp; \ n \\
+
+e \ :=&amp; \ x \\
+\mid&amp; \ e + e' \\
+\mid&amp; \ e \land e' \\
+\mid&amp; \ e == e' \\
+\mid&amp; \ \text{if} \ e \ \text{then} \ e' \ \text{else} \ e''
+\end{aligned}</div></div></div></section><section data-id="6368d2026df0f49d3294bbb040166f4c" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 46px; height: auto;" data-block-id="91536423792b746860ad32c6d092f3bd"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10; line-height: 0.975;" data-has-line-height="">
+<h1>
+<strong>GADTs: </strong>Motivation</h1>
+
+<h2>No <strong>Phantom </strong><em>types</em>&nbsp;</h2>
+</div></div>
+
+<div class="sl-block" data-block-type="code" style="width: 607px; height: 490px; left: 240px; top: 210px;" data-block-id="91ef4cbd5eb8819abd396df5c3bff4ef"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 12; font-size: 140%;"><pre class="haskell"><code class="hljs"><span class="hljs-title">eval</span> :: <span class="hljs-type">Expr</span> -&gt; <span class="hljs-type">Either</span> [<span class="hljs-type">Char</span>] <span class="hljs-type">ELit</span>
+<span class="hljs-title">eval</span> expr = 
+  <span class="hljs-keyword">case</span> expr <span class="hljs-keyword">of</span>
+    <span class="hljs-type">ELit</span> lit -&gt; <span class="hljs-type">Right</span> lit
+    <span class="hljs-type">EAdd</span> e1 e2 -&gt; <span class="hljs-keyword">do</span>
+      <span class="hljs-type">ELit</span> res1 &lt;- eval e1 
+      <span class="hljs-keyword">case</span> res1 <span class="hljs-keyword">of</span>
+        <span class="hljs-type">LInt</span> n1 -&gt; <span class="hljs-keyword">do</span>
+          <span class="hljs-type">ELit</span> res2 &lt;- eval e2
+          <span class="hljs-keyword">case</span> res2 <span class="hljs-keyword">of</span>
+            <span class="hljs-type">LInt</span> n2 -&gt;
+              <span class="hljs-type">Right</span> (<span class="hljs-type">LInt</span> (n1 + n2))
+            <span class="hljs-type">LBool</span> _ -&gt; 
+              <span class="hljs-type">Left</span> <span class="hljs-string">"Cannot add EBool"</span>
+        <span class="hljs-type">LBool</span> _ -&gt; 
+          <span class="hljs-type">Left</span> <span class="hljs-string">"Cannot add EBool"</span>
+    ...</code></pre></div></div></section><section data-id="fcc0d38b8da0e8b052c93434d303acd3" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="c439694f127b0333b90cb3664cf48cb4"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1><strong>Exercise 1</strong></h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 286px; height: auto;" data-block-id="28f48f95277fbb0ee95d0f88ba520b66"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11;">
+<h3>src/Typelevel/Exercises/Intro/GADTs.hs</h3>
+</div></div></section><section data-id="69af72511b0498cb1281403abf42ee96" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 46px; height: auto;" data-block-id="30d7ae7176d1c7c5ed85c02653fd3111"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11; line-height: 0.975;" data-has-line-height="">
+<h1>
+<strong>GADTs: </strong>Motivation</h1>
+
+<h2>
+<strong>Phantom </strong><em>types</em>&nbsp;</h2>
+</div></div>
+
+<div class="sl-block" data-block-type="code" style="width: 581px; height: 315px; left: 203px; top: 222px;" data-block-id="937f27ccda7bbd7c04b523d8e97e5c0a"><div class="sl-block-style" style="z-index: 12; transform: rotate(360deg);"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 12; font-size: 140%;"><pre class="haskell"><code class="hljs"><span class="hljs-class"><span class="hljs-keyword">data</span> <span class="hljs-type">PLit</span></span>
+  = <span class="hljs-type">PBool</span> <span class="hljs-type">Bool</span>
+  | <span class="hljs-type">PInt</span> <span class="hljs-type">Int</span>
+
+<span class="hljs-class"><span class="hljs-keyword">data</span> <span class="hljs-type">PExpr</span> a</span>
+  = <span class="hljs-type">PLit</span> <span class="hljs-type">PLit</span>
+  | <span class="hljs-type">PAdd</span> (<span class="hljs-type">PExpr</span> <span class="hljs-type">Int</span>) (<span class="hljs-type">PExpr</span> <span class="hljs-type">Int</span>)
+  | <span class="hljs-type">PAnd</span> (<span class="hljs-type">PExpr</span> <span class="hljs-type">Bool</span>) (<span class="hljs-type">PExpr</span> <span class="hljs-type">Bool</span>)
+  | <span class="hljs-type">PEq</span> (<span class="hljs-type">PExpr</span> a) (<span class="hljs-type">PExpr</span> a)
+  | <span class="hljs-type">PIf</span> (<span class="hljs-type">PExpr</span> <span class="hljs-type">Bool</span>) (<span class="hljs-type">PExpr</span> a) (<span class="hljs-type">PExpr</span> a)</code></pre></div></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="f7c70ddc70f17100b7ab6db76c04536e" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 193px; top: 537px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;" data-fragment-index="0">
+<p>The type parameter '<strong>a</strong>' allows us to add <em>extra </em>information about the value at compile time.</p>
+</div></div></section><section data-id="916ed85185a5b4c6b340a2b8e1460b1c" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 46px; height: auto;" data-block-id="1e910e189718ec27c9b250c734d798e2"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11; line-height: 0.975;" data-has-line-height="">
+<h1>
+<strong>GADTs: </strong>Motivation</h1>
+
+<h2>
+<strong>Phantom </strong><em>types</em>&nbsp;</h2>
+</div></div>
+
+<div class="sl-block" data-block-type="code" data-block-id="96bc949080236d7848c0fb9ea0483554" style="min-width: 30px; min-height: 30px; width: 720px; height: 394px; left: 194px; top: 223px;"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 12; font-size: 140%;"><pre class="haskell"><code class="hljs"><span class="hljs-title">peval</span> :: <span class="hljs-type">PExpr</span> a -&gt; <span class="hljs-type">Either</span> [<span class="hljs-type">Char</span>] <span class="hljs-type">PLit</span>
+<span class="hljs-title">peval</span> pexpr =
+  <span class="hljs-keyword">case</span> pexpr <span class="hljs-keyword">of</span>
+    <span class="hljs-type">PLit</span> plit -&gt; <span class="hljs-type">Right</span> plit
+    <span class="hljs-type">PAdd</span> pe1 pe2 -&gt; <span class="hljs-keyword">do</span>
+      res1 &lt;- peval pe1
+      <span class="hljs-keyword">case</span> res1 <span class="hljs-keyword">of</span>
+        <span class="hljs-type">PBool</span> _ -&gt; <span class="hljs-type">Left</span> <span class="hljs-string">"Cannot add PBool"</span>
+        <span class="hljs-type">PInt</span> n1 -&gt; <span class="hljs-keyword">do</span>
+          res2 &lt;- peval pe2
+          <span class="hljs-keyword">case</span> res2 <span class="hljs-keyword">of</span>
+            <span class="hljs-type">PBool</span> _ -&gt; <span class="hljs-type">Left</span> <span class="hljs-string">"Cannot add PBool"</span>
+            <span class="hljs-type">PInt</span> n2 -&gt; pure (<span class="hljs-type">PInt</span> (n1 + n2))
+    ...</code></pre></div></div></section><section data-id="66ca37c076db0f26c2b1736e42e9115b" class="future" aria-hidden="true" style="display: none;">
+<div class="sl-block" data-block-type="code" data-block-id="67fa4c1b469e67041068e579c941a54e" style="min-width: 30px; min-height: 30px; width: 551px; height: 389px; left: 205px; top: 210px;"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 11; font-size: 140%;"><pre class="haskell"><code class="hljs"><span class="hljs-title">peval_Example_1</span> :: <span class="hljs-type">Either</span> [<span class="hljs-type">Char</span>] <span class="hljs-type">PLit</span>
+<span class="hljs-title">peval_Example_1</span> =
+  peval $
+    <span class="hljs-type">PAnd</span> 
+      (<span class="hljs-type">PLit</span> (<span class="hljs-type">PBool</span> <span class="hljs-type">True</span>)) 
+      (<span class="hljs-type">PLit</span> (<span class="hljs-type">PBool</span> <span class="hljs-type">False</span>))
+
+<span class="hljs-title">peval_Example_2</span> :: <span class="hljs-type">Either</span> [<span class="hljs-type">Char</span>] <span class="hljs-type">PLit</span>
+<span class="hljs-title">peval_Example_2</span> =
+  peval $
+    <span class="hljs-type">PEq</span> 
+      (<span class="hljs-type">PLit</span> (<span class="hljs-type">PInt</span> <span class="hljs-number">1</span>)) 
+      (<span class="hljs-type">PLit</span> (<span class="hljs-type">PBool</span> <span class="hljs-type">True</span>))</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 46px; height: auto;" data-block-id="e8d0795cd560d41b2408c2a2bd5ffa96"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 12; line-height: 0.975;" data-has-line-height="">
+<h1>
+<strong>GADTs: </strong>Motivation</h1>
+
+<h2>
+<strong>Phantom </strong><em>types</em>&nbsp;</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="c52dd5fee47308e4746b91a74ec2d0d5" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 599px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;" data-fragment-index="0">
+<p>So how does this help us... ?</p>
+</div></div></section><section data-id="ef1a67b672c15dabc347e2356b5c77bc" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="text" style="width: 806px; left: 80px; top: 46px; height: auto;" data-block-id="f76251de5627995632e8e04b44f5c870"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11; line-height: 0.975;" data-has-line-height="">
+<h1>
+<strong>GADTs: </strong>Solution</h1>
+</div></div>
+
+<div class="sl-block" data-block-type="code" style="width: 880px; height: 334px; left: 80px; top: 210px;" data-block-id="6d1123fcd75152486e94a8b362a99cab"><div class="sl-block-content notranslate fragment" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 12; font-size: 150%;" data-fragment-index="0"><pre class="haskell"><code class="hljs"><span class="hljs-class"><span class="hljs-keyword">data</span> <span class="hljs-type">GLit</span> a where</span>
+  <span class="hljs-type">GBool</span> :: <span class="hljs-type">Bool</span> -&gt; <span class="hljs-type">GLit</span> <span class="hljs-type">Bool</span>
+  <span class="hljs-type">GInt</span>  :: <span class="hljs-type">Int</span>  -&gt; <span class="hljs-type">GLit</span> <span class="hljs-type">Int</span>
+
+<span class="hljs-class"><span class="hljs-keyword">data</span> <span class="hljs-type">GExpr</span> a where</span>
+  <span class="hljs-type">GLit</span> :: <span class="hljs-type">GLit</span> a -&gt; <span class="hljs-type">GExpr</span> a
+  <span class="hljs-type">GAdd</span> :: <span class="hljs-type">GExpr</span> <span class="hljs-type">Int</span> -&gt; <span class="hljs-type">GExpr</span> <span class="hljs-type">Int</span> -&gt; <span class="hljs-type">GExpr</span> <span class="hljs-type">Int</span>
+  <span class="hljs-type">GAnd</span> :: <span class="hljs-type">GExpr</span> <span class="hljs-type">Bool</span> -&gt; <span class="hljs-type">GExpr</span> <span class="hljs-type">Bool</span> -&gt; <span class="hljs-type">GExpr</span> <span class="hljs-type">Bool</span>
+  <span class="hljs-type">GEq</span>  :: <span class="hljs-type">Eq</span> a =&gt; <span class="hljs-type">GExpr</span> a -&gt; <span class="hljs-type">GExpr</span> a -&gt; <span class="hljs-type">GExpr</span> <span class="hljs-type">Bool</span>
+  <span class="hljs-type">GIf</span>  :: <span class="hljs-type">GExpr</span> <span class="hljs-type">Bool</span> -&gt; <span class="hljs-type">GExpr</span> a -&gt; <span class="hljs-type">GExpr</span> a -&gt; <span class="hljs-type">GExpr</span> a
+
+</code></pre></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="137d4eba661eaddacd9a9f29151435a5" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 192px; top: 119px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;">
+<h3>"Correct by Construction"</h3>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="05c7cb84d15b1b1050593712147ea1c1" style="height: auto; min-width: 30px; min-height: 30px; width: 669px; left: 146px; top: 560px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;" data-fragment-index="1">
+<p>The return type of <strong>GExpr</strong>&nbsp;constructors can <em>depend</em>&nbsp;on the types of the constructor fields.</p>
+</div></div></section><section data-id="762a32b14d0faf514be768b5aedf200e" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="25e8a8a657787bc5121eefa4e6dd94c7"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1><strong>Exercise 2a &amp; 2b</strong></h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 286px; height: auto;" data-block-id="24926730a6e3bbceaf5f37270afc8efd"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11;">
+<h3>src/Typelevel/Exercises/Intro/GADTs.hs</h3>
+</div></div></section><section data-id="e331963b32fdaf8faab2a4f808d8eaa5" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="code" data-block-id="7df31ce588b95f99fd517d2bd61c1ee7" style="min-width: 30px; min-height: 30px; width: 667px; height: 350px; left: 195px; top: 315px;"><div class="sl-block-content notranslate fragment" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 11; font-size: 150%;" data-fragment-index="0"><pre class="haskell"><code class="hljs"><span class="hljs-title">geval</span> :: <span class="hljs-type">GExpr</span> a -&gt; a
+<span class="hljs-title">geval</span> gexpr =
+  <span class="hljs-keyword">case</span> gexpr <span class="hljs-keyword">of</span>
+    <span class="hljs-type">GLit</span> glit   -&gt; gevalLit glit
+    <span class="hljs-type">GAdd</span> e1 e2  -&gt; geval e1 + geval e2
+    <span class="hljs-type">GAnd</span> e1 e2  -&gt; geval e1 &amp;&amp; geval e2
+    <span class="hljs-type">GEq</span> e1 e2   -&gt; geval e1 == geval e2
+    <span class="hljs-type">GIf</span> c e1 e2 -&gt;
+      <span class="hljs-keyword">if</span> (geval c)
+        <span class="hljs-keyword">then</span> geval e1
+        <span class="hljs-keyword">else</span> geval e2</code></pre></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="f10a0eef4e59ae42e719a860a3d06bb2" style="height: auto; min-width: 30px; min-height: 30px; width: 620px; left: 170px; top: 66px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<h2>
+<strong>Exercise 2b: </strong>Solution</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="a84b1f2c97fbda7430cfc3ae11d1b591" style="min-width: 30px; min-height: 30px; width: 418px; height: 111px; left: 195px; top: 187px;"><div class="sl-block-content notranslate fragment" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 13; font-size: 150%;" data-code-wrap="true" data-fragment-index="1"><pre class="haskell"><code class="hljs"><span class="hljs-title">gevalLit</span> :: <span class="hljs-type">GLit</span> a -&gt; a
+<span class="hljs-title">gevalLit</span> (<span class="hljs-type">GBool</span> b) = b
+<span class="hljs-title">gevalLit</span> (<span class="hljs-type">GInt</span> n)  = n</code></pre></div></div></section></section><section class="stack future" data-id="7019ca7fa86dcea7e7f1bb6e5f408d79" hidden="" aria-hidden="true" style="display: none;"><section data-id="89d7c933347b4de4228d3f312a99b714" style="display: none;"><div class="sl-block" data-block-type="text" style="width: 743px; left: 110px; top: 140px; height: auto;" data-block-id="a4aa918986a4fe5c51ede451967bca88"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>
+<em>Type-level Programming</em> in <strong>Haskell</strong>
+</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="f1d0260cfb98c3dabe5337b1cdbe2848" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 181px; top: 345px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; font-size: 130%;" dir="ui">
+<ul>
+	<li class="fragment" data-fragment-index="0">Type-level Functions</li>
+	<li class="fragment" data-fragment-index="1">Value &amp; Type Promotion</li>
+	<li class="fragment" data-fragment-index="2">Higher-Kinded data</li>
+</ul>
+</div></div></section><section data-id="e67c53b00f940a372ba93fb4af7a26d1" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="code" data-block-id="2066f909292fb06f3488695fff19f7d1" style="min-width: 30px; min-height: 30px; width: 553px; height: 295px; left: 210px; top: 229px;"><div class="sl-block-content notranslate fragment" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 10; font-size: 140%;" data-fragment-index="0"><pre class="haskell"><code class="hljs"><span class="hljs-meta">{-# LANGUAGE DataKinds             #-}</span>
+<span class="hljs-meta">{-# LANGUAGE GADTs                 #-}</span>
+<span class="hljs-meta">{-# LANGUAGE KindSignatures        #-}</span>
+<span class="hljs-meta">{-# LANGUAGE MultiParamTypeClasses #-}</span>
+<span class="hljs-meta">{-# LANGUAGE PolyKinds             #-}</span>
+<span class="hljs-meta">{-# LANGUAGE TypeFamilies          #-}</span>
+<span class="hljs-meta">{-# LANGUAGE TypeOperators         #-}</span>
+<span class="hljs-meta">{-# LANGUAGE UndecidableInstances  #-}</span></code></pre></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="2bccb77dfeb9b82ec63df2431b4c7632" style="height: auto; min-width: 30px; min-height: 30px; width: 645px; left: 158px; top: 122px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<h2>Language<strong> Extensions</strong>
+</h2>
+</div></div>
+
+<div class="sl-block" data-block-type="shape" data-block-id="9439aa436494c3281eea6f127e530641" style="min-width: 4px; min-height: 4px; width: 532px; height: 29px; left: 210px; top: 260px;"><div class="sl-block-style" style="z-index: 12; opacity: 0.29;"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(106, 168, 79)" data-shape-stretch="true" style="z-index: 12;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 532 29"><rect width="532" height="29" rx="0" ry="0" class="shape-element" fill="rgb(106, 168, 79)"></rect></svg></div></div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 532px; height: 22px; left: 210px; top: 318px;" data-block-id="0a837bdfef5188990f924a6c893eac3b"><div class="sl-block-style" style="z-index: 13; opacity: 0.29;"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(106, 168, 79)" data-shape-stretch="true" style="z-index: 13;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 532 22"><rect width="532" height="22" rx="0" ry="0" class="shape-element" fill="rgb(106, 168, 79)"></rect></svg></div></div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 532px; height: 29px; left: 210px; top: 289px;" data-block-id="9b6cef7eb8a6f24cf6b5277be1b3f667"><div class="sl-block-style" style="z-index: 15; opacity: 0.29;"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(106, 168, 79)" data-shape-stretch="true" style="z-index: 15;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 532 29"><rect width="532" height="29" rx="0" ry="0" class="shape-element" fill="rgb(106, 168, 79)"></rect></svg></div></div></div></section><section data-id="9a858be773fe94615d3f9384cf80de49" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="code" style="width: 751px; height: 73px; left: 105px; top: 104px;" data-block-id="f1ddf45ba9c2a888921e1347a3369f60"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 10; font-size: 250%;"><pre class="haskell"><code class="hljs"><span class="hljs-meta">{-# LANGUAGE TypeFamilies #-}</span></code></pre></div></div>
+
+
+<div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 174px; top: 203px;" data-block-id="1ea27de0822b97e6eefd320ad4686b19"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; font-size: 90%;">
+<p><em><span style="text-align:left">The concept of a type family comes from type theory. An indexed type family in type theory is a partial function at the type level. Applying the function to parameters (called </span>type indices<span style="text-align:left">) yields a type. Type families permit a program to compute what data constructors it will operate on, rather than having them fixed statically (as with simple type systems) or treated as opaque unknowns (as with parametrically polymorphic types).</span></em></p>
+
+<p>&nbsp;</p>
+
+<p style="text-align:right"><em><span style="text-align:left">- GHC Wiki</span></em></p>
+</div></div></section><section data-id="64a8fc1b726c1f8daa2aa12deca575f2" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="code" data-block-id="1b37497eec29945fb472dbf97e870abc" style="min-width: 30px; min-height: 30px; width: 765px; height: 76px; left: 102px; top: 70px;"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 10; font-size: 260%;"><pre class="haskell"><code class="hljs"><span class="hljs-meta">{-# LANGUAGE TypeFamilies #-}</span></code></pre></div></div>
+
+
+<div class="sl-block" data-block-type="text" data-block-id="0e587e06a91ff9b10b59deb2aa980cee" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 121px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;" data-fragment-index="0">
+<h3><span style="font-size:0.7em">("Type level functions")</span></h3>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="3e452b7da424ae049361cd675ccbf502" style="min-width: 30px; min-height: 30px; width: 432px; height: 83px; left: 161px; top: 272px;"><div class="sl-block-content notranslate fragment" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 12; font-size: 130%;" data-fragment-index="1"><pre class="haskell"><code class="hljs"><span class="hljs-title">const</span> :: a -&gt; b -&gt; a
+<span class="hljs-title">const</span> x _ = x</code></pre></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="60e2d49a26e38d88390945ef21bdab48" style="height: auto; min-width: 30px; min-height: 30px; width: 515px; left: 160px; top: 202px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;" dir="ui" data-fragment-index="1">
+<h3 style="text-align:left"><span style="font-size:0.9em">"<strong>Value-level</strong>" functions</span></h3>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 420px; left: 400px; top: 401px;" data-block-id="76a0b1e13f3f545a59dc1089f977139f"><div class="sl-block-style" style="z-index: 14; transform: rotate(360deg);"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;" data-fragment-index="2">
+<h3 style="text-align:left"><span style="font-size:0.9em">"<strong>Type-level" </strong>functions</span></h3>
+</div></div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 436px; height: 85px; left: 400px; top: 475px;" data-block-id="4b05d584fefe4ddfe76540ec0de8ba72"><div class="sl-block-style" style="z-index: 15; transform: rotate(360deg);"><div class="sl-block-content notranslate fragment" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 15; font-size: 130%;" data-fragment-index="2"><pre class="haskell"><code class="hljs"><span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-keyword">family</span> <span class="hljs-type">Const</span> a b where</span>
+  <span class="hljs-type">Const</span> a b = a</code></pre></div></div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 432px; height: 61px; left: 160px; top: 348px;" data-block-id="6479d4bd48d849de72d612e33ebd5413"><div class="sl-block-content notranslate fragment" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 16; font-size: 130%;" data-fragment-index="3"><pre class="haskell"><code class="hljs"><span class="hljs-type">Prelude</span>&gt; const <span class="hljs-number">42</span> <span class="hljs-string">"Haskell"</span>
+<span class="hljs-number">42</span></code></pre></div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 495px; height: 124px; left: 400px; top: 560px;" data-block-id="03dd690237d0b285e911c16a6bdc4f46"><div class="sl-block-content notranslate fragment" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 18; font-size: 130%;" data-fragment-index="3"><pre class="haskell"><code class="hljs"><span class="hljs-type">Prelude</span>&gt; :set -<span class="hljs-type">XTypeFamilies</span>
+<span class="hljs-type">Prelude</span>&gt; :kind! <span class="hljs-type">Const</span> <span class="hljs-type">Int</span> [<span class="hljs-type">Char</span>]
+<span class="hljs-type">Const</span> <span class="hljs-type">Int</span> [<span class="hljs-type">Char</span>] :: *
+= <span class="hljs-type">Int</span></code></pre></div></div></section><section data-id="cfc4c0cac6b47427d39bf1afc5309bbd" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="code" style="width: 765px; height: 75px; left: 98px; top: 186px;" data-block-id="ee76a714f845552a05bee6044f80b31f"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 11; font-size: 260%;"><pre class="haskell"><code class="hljs"><span class="hljs-meta">{-# LANGUAGE TypeFamilies #-}</span></code></pre></div></div>
+
+
+<div class="sl-block" data-block-type="text" data-block-id="3f768eb33a78503a1db2cc1d30ee5f82" style="height: auto; min-width: 30px; min-height: 30px; width: 899px; left: 27px; top: 274px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; line-height: 1.651; font-size: 110%;" data-has-line-height="">
+<ul>
+	<li>Evaluated at compile type, during type-checking</li>
+	<li>
+<strong>Domain</strong>: <em>Types, </em><strong>Codomain:</strong> <em>Types</em>
+</li>
+	<li>*Cannot be partially applied</li>
+	<li>Denoted with <strong>type variables </strong>and <em>kind signatures</em>
+</li>
+</ul>
+</div></div></section><section data-id="61e00fb9aeba29e7c92caaf1e5863530" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="code" style="width: 751px; height: 70px; left: 114px; top: 45px;" data-block-id="5d1e1e93a48b676f03c380709d0de4ec"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 11; font-size: 250%;"><pre class="haskell"><code class="hljs"><span class="hljs-meta">{-# LANGUAGE TypeFamilies #-}</span></code></pre></div></div>
+
+
+<div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 90px;" data-block-id="a87b8731c016d807a81606f957711946"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;" data-fragment-index="0">
+<h3><span style="font-size:0.7em">("Type level functions")</span></h3>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="5bd052bf4b5777bef88cd645b14d6f75" style="min-width: 30px; min-height: 30px; width: 629px; height: 339px; left: 166px; top: 160px;"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 13; font-size: 110%;"><pre class="haskell"><code data-line-numbers="" class="hljs"><table class="hljs-ln"><tbody><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="1"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-meta">{-# LANGUAGE KindSignatures #-}</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="2"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-meta">{-# LANGUAGE TypeFamilies   #-}</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="3"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="4"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">module</span> PartialTypeFamilyApply <span class="hljs-keyword">where</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="5"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="6"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-class"><span class="hljs-keyword">data</span> <span class="hljs-type">DConst</span> a b = <span class="hljs-type">DConst</span> a</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="7"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="8"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-comment">-- | We can partially apply a Type constructor...</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="9"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-keyword">family</span> <span class="hljs-type">CurryDConst</span> (<span class="hljs-title">a</span> :: *) :: (* -&gt; *) where</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="10"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-type">CurryDConst</span> <span class="hljs-type">Int</span> = <span class="hljs-type">DConst</span> <span class="hljs-type">Int</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="11"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="12"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-comment">-- | But _not_ a type family!</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="13"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-keyword">family</span> <span class="hljs-type">TConst</span> a b where <span class="hljs-type">TConst</span> a b = a</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="14"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-keyword">family</span> <span class="hljs-type">CurryTConst</span> (<span class="hljs-title">a</span> :: *) :: (* -&gt; *) where</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="15"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">  <span class="hljs-type">CurryTConst</span> <span class="hljs-type">Int</span> = <span class="hljs-type">TConst</span> <span class="hljs-type">Int</span></div></td></tr></tbody></table></code></pre></div></div>
+<div class="sl-block" data-block-type="code" data-block-id="b6645eacdbbe13c625e276312e46c758" style="min-width: 30px; min-height: 30px; width: 960px; height: 162px; left: 0px; top: 516px;"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 14; font-size: 110%;"><pre class="haskell"><code class="hljs">/home/thomasd/github/<span class="hljs-class"><span class="hljs-keyword">type</span>-as-specifications/src/<span class="hljs-type">PartialTypeFamilyApply</span>.hs:15:3: error:</span>
+    • <span class="hljs-type">The</span> <span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-keyword">family</span> ‘<span class="hljs-type">TConst</span>’ should have 2 arguments, but has been given 1</span>
+    • <span class="hljs-type">In</span> the equations for closed <span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-keyword">family</span> ‘<span class="hljs-type">CurryTConst</span>’</span>
+      <span class="hljs-type">In</span> the <span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-keyword">family</span> declaration for ‘<span class="hljs-type">CurryTConst</span>’</span>
+   |
+<span class="hljs-number">15</span> |   <span class="hljs-type">CurryTConst</span> <span class="hljs-type">Int</span> = <span class="hljs-type">TConst</span> <span class="hljs-type">Int</span>
+   |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^</code></pre></div></div></section><section data-id="74bae5d09670b517aff223c0ed4e207b" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="code" style="width: 751px; height: 70px; left: 114px; top: 45px;" data-block-id="21c8bf61c392479a96d062b5ef7f3809"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 11; font-size: 250%;"><pre class="haskell"><code class="hljs"><span class="hljs-meta">{-# LANGUAGE TypeFamilies #-}</span></code></pre></div></div>
+
+
+<div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 90px;" data-block-id="2a9111f5bc817113837627cc29a14a08"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;" data-fragment-index="0">
+<h3><span style="font-size:0.7em">("Type level functions")</span></h3>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="b244ad565fbd3610deb6bb63077a98db" style="height: auto; min-width: 30px; min-height: 30px; width: 718px; left: 131px; top: 199px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;">
+<h3>GHC's kind language is limited:</h3>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="9cdfdaaa380c3b9a9124daa5a7cdab12" style="min-width: 30px; min-height: 30px; width: 692px; height: 230px; left: 147px; top: 375px;"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 14; font-size: 150%;"><pre class="haskell"><code class="hljs"><span class="hljs-class"><span class="hljs-keyword">data</span> <span class="hljs-type">True</span>  <span class="hljs-comment">-- Declares the type 'True'</span></span>
+<span class="hljs-class"><span class="hljs-keyword">data</span> <span class="hljs-type">False</span> <span class="hljs-comment">-- Declares the type 'False'</span></span>
+
+<span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-keyword">family</span> <span class="hljs-type">Or</span> (<span class="hljs-title">b</span> :: *) (<span class="hljs-title">b'</span> :: *) :: * where</span>
+  <span class="hljs-type">Or</span> <span class="hljs-type">True</span> _      = <span class="hljs-type">True</span>
+  <span class="hljs-type">Or</span> _ <span class="hljs-type">True</span>      = <span class="hljs-type">True</span>
+  <span class="hljs-type">Or</span> <span class="hljs-type">False</span> <span class="hljs-type">False</span> = <span class="hljs-type">False</span></code></pre></div></div>
+<div class="sl-block" data-block-type="math" data-block-id="3f8d8860dbaefe304925ab7f9c10bc71" style="width: auto; height: auto; min-width: 30px; min-height: 30px; left: 141px; top: 256px;"><div class="sl-block-content notranslate" style="z-index: 15; font-size: 70%;"><div class="math-output"><span class="katex notranslate"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">{</mo><mtext>&nbsp;</mtext><mo>∗</mo><mtext>&nbsp;</mtext><mo separator="true">,</mo><mtext>&nbsp;</mtext><mo>∗</mo><mo>→</mo><mo>∗</mo><mtext>&nbsp;</mtext><mo separator="true">,</mo><mtext>&nbsp;</mtext><mo>∗</mo><mo>→</mo><mo>∗</mo><mo>→</mo><mo>∗</mo><mtext>&nbsp;</mtext><mo separator="true">,</mo><mtext>&nbsp;</mtext><mo stretchy="false">(</mo><mo>∗</mo><mtext>&nbsp;</mtext><mo>→</mo><mo>∗</mo><mo stretchy="false">)</mo><mtext>&nbsp;</mtext><mo>→</mo><mo>∗</mo><mtext>&nbsp;</mtext><mo separator="true">,</mo><mtext>&nbsp;</mtext><mo>…</mo> <mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">\{\ *\ ,\ * \rightarrow *\ ,\ * \rightarrow * \rightarrow *\ ,\ (*\ \rightarrow *)\ \rightarrow *\ ,\ \dots \}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 1em; vertical-align: -0.25em;"></span><span class="mopen">{</span><span class="mspace">&nbsp;</span><span class="mord">∗</span><span class="mspace">&nbsp;</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mspace">&nbsp;</span><span class="mord">∗</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.65972em; vertical-align: -0.19444em;"></span><span class="mord">∗</span><span class="mspace">&nbsp;</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mspace">&nbsp;</span><span class="mord">∗</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.46528em; vertical-align: 0em;"></span><span class="mord">∗</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 1em; vertical-align: -0.25em;"></span><span class="mord">∗</span><span class="mspace">&nbsp;</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mspace">&nbsp;</span><span class="mopen">(</span><span class="mord">∗</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mspace">&nbsp;</span><span class="mrel">→</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 1em; vertical-align: -0.25em;"></span><span class="mord">∗</span><span class="mclose">)</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mspace">&nbsp;</span><span class="mrel">→</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 1em; vertical-align: -0.25em;"></span><span class="mord">∗</span><span class="mspace">&nbsp;</span><span class="mpunct">,</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mspace">&nbsp;</span><span class="minner">…</span><span class="mspace" style="margin-right: 0.166667em;"></span><span class="mclose">}</span></span></span></span></div><div class="math-input">\{\ *\ ,\ * \rightarrow *\ ,\ * \rightarrow * \rightarrow *\ ,\ (*\ \rightarrow *)\ \rightarrow *\ ,\ \dots \}</div></div></div></section><section data-id="a3ffda2b3efab0ab0e42f3a4b9cae746" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="code" style="width: 751px; height: 70px; left: 114px; top: 45px;" data-block-id="a38f8808112988440a2adef1324b136a"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 11; font-size: 250%;"><pre class="haskell"><code class="hljs"><span class="hljs-meta">{-# LANGUAGE TypeFamilies #-}</span></code></pre></div></div>
+
+
+<div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 90px;" data-block-id="3b169672a10046dcce87f1f8ddfd95f1"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<h3><span style="font-size:0.7em">("Type level functions")</span></h3>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 715px; height: 309px; left: 150px; top: 336px;" data-block-id="35ac5a5f72f59597d5d7844f33c160a2"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 13; font-size: 150%;"><pre class="haskell"><code class="hljs"><span class="hljs-class"><span class="hljs-keyword">data</span> <span class="hljs-type">True</span>  <span class="hljs-comment">-- ^ Declares the type 'True'</span></span>
+<span class="hljs-class"><span class="hljs-keyword">data</span> <span class="hljs-type">False</span> <span class="hljs-comment">-- ^ Declares the type 'False'</span></span>
+
+<span class="hljs-comment">-- | Type-level Boolean Or</span>
+<span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-keyword">family</span> <span class="hljs-type">Or</span> (<span class="hljs-title">b</span> :: *) (<span class="hljs-title">b'</span> :: *) :: * where</span>
+  <span class="hljs-type">Or</span> <span class="hljs-type">True</span>  _     = <span class="hljs-type">True</span>
+  <span class="hljs-type">Or</span> _     <span class="hljs-type">True</span>  = <span class="hljs-type">True</span>
+  <span class="hljs-type">Or</span> <span class="hljs-type">False</span> <span class="hljs-type">False</span> = <span class="hljs-type">False</span>
+  <span class="hljs-type">Or</span> <span class="hljs-type">Int</span>   <span class="hljs-type">Char</span>  = <span class="hljs-type">Maybe</span> (<span class="hljs-type">IO</span> <span class="hljs-type">Bool</span>)  </code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 790px; left: 75px; top: 185px;" data-block-id="e4bf7067442e1e701b1d202fcb8880e0"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;">
+<ul>
+	<li class="fragment" data-fragment-index="0">
+<strong>Or </strong>can be instantiated with <em>any type </em>of <strong>kind *</strong>
+</li>
+	<li class="fragment" data-fragment-index="1">
+<strong>Or </strong>can return <em>any type </em>of <strong>kind *</strong>
+</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="shape" data-block-id="f43c4c7b8b879421634d37610ced476f" style="min-width: 4px; min-height: 4px; width: 768px; height: 48px; left: 114px; top: 571px;"><div class="sl-block-content fragment fade-out" data-shape-type="rect" data-shape-fill-color="rgb(255, 255, 255)" data-shape-stretch="true" style="z-index: 15;" data-fragment-index="2"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 768 48"><rect width="768" height="48" rx="0" ry="0" class="shape-element" fill="rgb(255, 255, 255)"></rect></svg></div></div></section><section data-id="2b31c5ada93b08271c7fb754b985c8f4" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="code" style="width: 664px; height: 70px; left: 148px; top: 59px;" data-block-id="352eb02c66678f7735fc3e5de9673965"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 11; font-size: 250%;"><pre class="haskell"><code class="hljs"><span class="hljs-meta">{-# LANGUAGE DataKinds #-}</span></code></pre></div></div>
+
+
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 872px; left: 44px; top: 159px;" data-block-id="1ae1e81dfc324c3fca6b579f00f61312"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; line-height: 1.014;" data-has-line-height="">
+<ul>
+	<li>
+	<p><span style="font-size:1.2em"><strong>Values</strong> are promoted to <em>types</em></span></p>
+	</li>
+	<li>
+	<p><span style="font-size:1.2em"><strong>Types</strong> are promoted to <em>kinds</em></span></p>
+	</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="597f37571cec87257b17f6bd5b59c86f" style="min-width: 30px; min-height: 30px; width: 822px; height: 365px; left: 80px; top: 287px;"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 13; font-size: 150%;"><pre class="haskell"><code class="hljs"><span class="hljs-comment">-- | Declares the _kind_ Bool </span>
+<span class="hljs-comment">-- and the _type constructors_ True and False.</span>
+<span class="hljs-class"><span class="hljs-keyword">data</span> <span class="hljs-type">Bool</span></span>
+  = <span class="hljs-type">True</span>    
+  | <span class="hljs-type">False</span>
+
+<span class="hljs-comment">-- | Type-level Boolean Or</span>
+<span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-keyword">family</span> <span class="hljs-type">Or</span> (<span class="hljs-title">b</span> :: <span class="hljs-type">Bool</span>) (<span class="hljs-title">b'</span> :: <span class="hljs-type">Bool</span>) :: <span class="hljs-type">Bool</span> where</span>
+  <span class="hljs-type">Or</span> '<span class="hljs-type">True</span>  _      = '<span class="hljs-type">True</span>
+  <span class="hljs-type">Or</span> _     '<span class="hljs-type">True</span>   = '<span class="hljs-type">True</span>
+  <span class="hljs-type">Or</span> '<span class="hljs-type">False</span> '<span class="hljs-type">False</span> = '<span class="hljs-type">False</span></code></pre></div></div></section><section data-id="6ef41c5e45e42d64743403ef9c42e6be" class="future" aria-hidden="true" style="display: none;">
+
+
+
+
+<div class="sl-block" data-block-type="text" data-block-id="7da04544b46bf9b50d8b859b9bbe9ba6" style="height: auto; min-width: 30px; min-height: 30px; width: 789px; left: 86px; top: 210px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<h1><strong>Exercises 1 &amp; 2</strong></h1>
+
+<h3>src/Typelevel/Exercises/Basics.hs</h3>
+</div></div></section><section data-id="50c6c2ee4d18ae512b918ff5eb2ae40b" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="code" style="width: 664px; height: 70px; left: 149px; top: 70px;" data-block-id="3024fac2255cba1164ebbdd4e9162c65"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 11; font-size: 250%;"><pre class="haskell"><code class="hljs"><span class="hljs-meta">{-# LANGUAGE DataKinds #-}</span></code></pre></div></div>
+
+
+<div class="sl-block" data-block-type="text" style="height: auto; width: 872px; left: 38px; top: 137px;" data-block-id="28f7146228ccef8053bfde9b68e1bba4"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; line-height: 1.014;" data-has-line-height="">
+<h2>Type-level<strong> Natural Numbers</strong>
+</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="07ee6210354fde1a2068701e18af36e0" style="height: auto; min-width: 30px; min-height: 30px; width: 857px; left: 66px; top: 244px;"><div class="sl-block-style" style="z-index: 13; transform: rotate(360deg);"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; line-height: 1.118;" data-has-line-height="">
+<p style="text-align:left"><span style="font-size:1.2em"><strong>Peano Axioms</strong></span></p>
+
+<ol>
+	<li style="text-align:left"><strong><span style="font-size:0.9em">0 is a natural number</span></strong></li>
+	<li style="text-align:left"><span style="font-size:0.9em"><span style="color:rgb(34, 34, 34); text-align:left">For every natural number </span><em>x</em><span style="color:rgb(34, 34, 34); text-align:left">, </span><span class="nowrap" style="color:rgb(34, 34, 34); text-align:left"><em>x</em>&nbsp;= <em>x</em></span></span></li>
+	<li style="text-align:left"><span style="font-size:0.9em"><span style="color:rgb(34, 34, 34); text-align:left">For all natural numbers </span><em>x</em><span style="color:rgb(34, 34, 34); text-align:left">&nbsp;and </span><em>y</em><span style="color:rgb(34, 34, 34); text-align:left">, if </span><span class="nowrap" style="color:rgb(34, 34, 34); text-align:left"><em>x</em>&nbsp;= <em>y</em></span><span style="color:rgb(34, 34, 34); text-align:left">, then </span><span class="nowrap" style="color:rgb(34, 34, 34); text-align:left"><em>y</em>&nbsp;= <em>x</em></span><span style="color:rgb(34, 34, 34); text-align:left">. </span></span></li>
+	<li style="text-align:left"><span style="font-size:0.9em"><span style="color:rgb(34, 34, 34); text-align:left">For all natural numbers </span><em>x</em><span style="color:rgb(34, 34, 34); text-align:left">, </span><em>y</em><span style="color:rgb(34, 34, 34); text-align:left">&nbsp;and </span><em>z</em><span style="color:rgb(34, 34, 34); text-align:left">, if </span><em>x</em><span style="color:rgb(34, 34, 34); text-align:left">&nbsp;= </span><em>y</em><span style="color:rgb(34, 34, 34); text-align:left">&nbsp;and </span><em>y</em><span style="color:rgb(34, 34, 34); text-align:left">&nbsp;= </span><em>z</em><span style="color:rgb(34, 34, 34); text-align:left">, then </span><span class="nowrap" style="color:rgb(34, 34, 34); text-align:left"><em>x</em>&nbsp;= <em>z</em></span><span style="color:rgb(34, 34, 34); text-align:left">. </span></span></li>
+	<li style="text-align:left"><span style="font-size:0.9em">For all <em>a</em>&nbsp;and <em>b</em>, if <em>b</em>&nbsp;is a natural number and <span class="nowrap"><em>a</em>&nbsp;= <em>b</em></span>, then <em>a</em>&nbsp;is also a natural number.</span></li>
+	<li style="text-align:left"><strong><span style="font-size:0.9em">For every natural number <em>n</em>, <em>S</em>(<em>n</em>) is a natural number.</span></strong></li>
+	<li style="text-align:left"><span style="font-size:0.9em"><span style="color:rgb(34, 34, 34); text-align:left">For all natural numbers </span><em>m</em><span style="color:rgb(34, 34, 34); text-align:left">&nbsp;and </span><em>n</em><span style="color:rgb(34, 34, 34); text-align:left">, </span><span class="nowrap" style="color:rgb(34, 34, 34); text-align:left"><em>m</em>&nbsp;= <em>n</em></span><span style="color:rgb(34, 34, 34); text-align:left">&nbsp;if and only if </span><span class="nowrap" style="color:rgb(34, 34, 34); text-align:left"><em>S</em>(<em>m</em>) = <em>S</em>(<em>n</em>)</span><span style="color:rgb(34, 34, 34); text-align:left">. </span></span></li>
+	<li style="text-align:left"><span style="font-size:0.9em"><span style="color:rgb(34, 34, 34); text-align:left">For every natural number </span><em>n</em><span style="color:rgb(34, 34, 34); text-align:left">, </span><span class="nowrap" style="color:rgb(34, 34, 34); text-align:left"><em>S</em>(<em>n</em>) = 0</span><span style="color:rgb(34, 34, 34); text-align:left">&nbsp;is false. </span></span></li>
+</ol>
+</div></div></div></section><section data-id="872eb142cb0d037cdcea37a609212ed4" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="code" style="width: 664px; height: 70px; left: 149px; top: 70px;" data-block-id="81da286cfa8aac282718b87899ed72e8"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 11; font-size: 250%;"><pre class="haskell"><code class="hljs"><span class="hljs-meta">{-# LANGUAGE DataKinds #-}</span></code></pre></div></div>
+
+
+<div class="sl-block" data-block-type="text" style="height: auto; width: 872px; left: 38px; top: 137px;" data-block-id="d9b03e28adde29fdc5679233ea6b337e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; line-height: 1.014;" data-has-line-height="">
+<h2>Type-level<strong> Natural Numbers</strong>
+</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="f8b60e5ccebaf83acfdf6d0f1505c314" style="min-width: 30px; min-height: 30px; width: 785px; height: 321px; left: 95px; top: 280px;"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 13; font-size: 150%;"><pre class="haskell"><code class="hljs"><span class="hljs-comment">-- | Declares the _kind_ Nat</span>
+<span class="hljs-comment">-- and the _type constructors_ Zero and Succ </span>
+<span class="hljs-class"><span class="hljs-keyword">data</span> <span class="hljs-type">Nat</span> </span>
+  = <span class="hljs-type">Zero</span>
+  | <span class="hljs-type">Succ</span> <span class="hljs-type">Nat</span>
+
+<span class="hljs-comment">-- | Type-level natural number addition</span>
+<span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-keyword">family</span> <span class="hljs-type">Add</span> (<span class="hljs-title">n</span> :: <span class="hljs-type">Nat</span>) (<span class="hljs-title">m</span> :: <span class="hljs-type">Nat</span>) :: <span class="hljs-type">Nat</span> where</span>
+  <span class="hljs-type">Add</span> '<span class="hljs-type">Zero</span> m = m
+  <span class="hljs-type">Add</span> ('<span class="hljs-type">Succ</span> n) m = <span class="hljs-type">Succ</span> (<span class="hljs-type">Add</span> n m)</code></pre></div></div></section><section data-id="ad51d46a7cc6926746c8fb9c63e84d29" class="future" aria-hidden="true" style="display: none;">
+
+
+
+
+<div class="sl-block" data-block-type="text" style="height: auto; width: 789px; left: 80px; top: 189px;" data-block-id="7987ef682fbecf1f9fae2668456be797"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;">
+<h1><strong>Exercises 3 &amp; 4</strong></h1>
+
+<h3>src/Typelevel/Exercises/Basics.hs</h3>
+</div></div></section><section data-id="c2ba47a1c086517a0662993c5a576d4f" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="code" style="width: 782px; height: 77px; left: 98px; top: 152px;" data-block-id="97089ac8e1b8ac3584b51254d8c25151"><div class="sl-block-content notranslate fragment" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 11; font-size: 200%;" data-fragment-index="0"><pre class="haskell"><code class="hljs"><span class="hljs-meta">{-# LANGUAGE UndecidableInstances  #-}</span></code></pre></div></div>
+<div class="sl-block" data-block-type="code" data-block-id="6f8a211c0be999d1d16cf3b4c5876d4b" style="min-width: 30px; min-height: 30px; width: 889px; height: 225px; left: 45px; top: 257px;"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 12; font-size: 120%;"><pre class="haskell"><code class="hljs">/home/thomasd/github/<span class="hljs-class"><span class="hljs-keyword">type</span>-as-specifications/src/<span class="hljs-type">Typelevel</span>.hs:86:3: error:</span>
+    • <span class="hljs-type">Illegal</span> nested <span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-keyword">family</span> application ‘<span class="hljs-type">Add</span> m (<span class="hljs-type">Mult</span> <span class="hljs-title">n</span> <span class="hljs-title">m</span>)’</span>
+      (<span class="hljs-type">Use</span> <span class="hljs-type">UndecidableInstances</span> to permit this)
+    • <span class="hljs-type">In</span> the equations for closed <span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-keyword">family</span> ‘<span class="hljs-type">Mult</span>’</span>
+      <span class="hljs-type">In</span> the <span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-keyword">family</span> declaration for ‘<span class="hljs-type">Mult</span>’</span>
+   |
+<span class="hljs-number">86</span> |   <span class="hljs-type">Mult</span> ('<span class="hljs-type">S</span> n) m = <span class="hljs-type">Add</span> m (<span class="hljs-type">Mult</span> n m)
+   |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</code></pre></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="33e055d10b313760afc6fc645d33843c" style="height: auto; min-width: 30px; min-height: 30px; width: 764px; left: 98px; top: 70px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;">
+<h2><strong>Regarding Exercises 3 &amp; 4:</strong></h2>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="ea543a3944096d0557648774c9ba5622" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 189px; top: 503px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;" data-fragment-index="1">
+<p><span style="font-size:1.2em">GHC can't guarantee that this instance definition terminates.</span></p>
+</div></div></section><section data-id="36345d22d581be8870b3d7abd277c82d" class="future" aria-hidden="true" style="display: none;">
+
+
+<div class="sl-block" data-block-type="text" style="height: auto; width: 872px; left: 35px; top: 70px;" data-block-id="a0f6f8f204c3f186153015b3f93c1db4"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; line-height: 1.014;" data-has-line-height="">
+<h2>Type-level<strong> Natural Numbers</strong>
+</h2>
+
+<p><strong>(w/ more ergonomics!)</strong></p>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="1dea185477436ed72d7e2f61aaedfe50" style="min-width: 30px; min-height: 30px; width: 603px; height: 271px; left: 179px; top: 238px;"><div class="sl-block-content notranslate fragment" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 12; font-size: 130%;" data-fragment-index="0"><pre class="haskell"><code class="hljs"><span class="hljs-comment">-- Type aliases for readability</span>
+<span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-type">One</span>   = '<span class="hljs-type">Succ</span> '<span class="hljs-type">Zero</span></span>
+<span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-type">Two</span>   = '<span class="hljs-type">Succ</span> ('<span class="hljs-type">Succ</span> '<span class="hljs-type">Zero</span> )</span>
+<span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-type">Three</span> = '<span class="hljs-type">Succ</span> ('<span class="hljs-type">Succ</span> ('<span class="hljs-type">Succ</span> '<span class="hljs-type">Zero</span> ))</span>
+<span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-type">Four</span>  = <span class="hljs-type">Mult</span> <span class="hljs-type">Two</span> <span class="hljs-type">Two</span></span>
+<span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-type">Five</span>  = <span class="hljs-type">Add</span> <span class="hljs-type">Two</span> <span class="hljs-type">Three</span></span>
+<span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-type">Six</span>   = <span class="hljs-type">Add</span> <span class="hljs-type">Three</span> <span class="hljs-type">Three</span></span>
+<span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-type">Seven</span> = <span class="hljs-type">Add</span> <span class="hljs-type">Four</span> <span class="hljs-type">Three</span></span>
+<span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-type">Eight</span> = <span class="hljs-type">Mult</span> <span class="hljs-type">Four</span> <span class="hljs-type">Two</span></span>
+<span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-type">Nine</span>  = <span class="hljs-type">Mult</span> <span class="hljs-type">Three</span> <span class="hljs-type">Three</span></span>
+</code></pre></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="a949bd1ffdfaa306d745892a5c435673" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 171px; top: 560px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;" data-fragment-index="1">
+<h3>But this is annoying...</h3>
+</div></div></section><section data-id="8f0cf36f9b513b2c232e6bfb232ae1de" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="code" style="width: 782px; height: 77px; left: 89px; top: 70px;" data-block-id="8ce82fd25d137fea407783797f440748"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 11; font-size: 250%;"><pre class="haskell"><code class="hljs"><span class="hljs-meta">{-# LANGUAGE TypeOperators #-}</span></code></pre></div></div>
+<div class="sl-block" data-block-type="code" data-block-id="164d465687c4f9f4994980f067fed377" style="min-width: 30px; min-height: 30px; width: 339px; height: 107px; left: 320px; top: 189px;"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 12; font-size: 140%;"><pre class="haskell"><code class="hljs"><span class="hljs-comment">-- Type alias</span>
+<span class="hljs-class"><span class="hljs-keyword">type</span> (||) a b = <span class="hljs-type">Or</span> a b</span>
+<span class="hljs-keyword">infixl</span> <span class="hljs-number">7</span> ||</code></pre></div></div>
+<div class="sl-block" data-block-type="code" data-block-id="5108144ea13ce7c475fa5c93edff9bad" style="min-width: 30px; min-height: 30px; width: 741px; height: 146px; left: 110px; top: 335px;"><div class="sl-block-style" style="z-index: 13; transform: rotate(360deg);"><div class="sl-block-content notranslate fragment" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 13; font-size: 140%;" data-fragment-index="0"><pre class="haskell"><code class="hljs"><span class="hljs-comment">-- Type family definitions</span>
+<span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-keyword">family</span> (<span class="hljs-title">n</span> :: <span class="hljs-type">Nat</span>) :*: (<span class="hljs-title">m</span> :: <span class="hljs-type">Nat</span>) :: <span class="hljs-type">Nat</span> where</span>
+  '<span class="hljs-type">Zero</span>     :*: m = '<span class="hljs-type">Zero</span>
+  ('<span class="hljs-type">Succ</span> n) :*: m = m + (n :*: m)</code></pre></div></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="37b843ecf9def01e3c5f48965943622e" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 89px; top: 499px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; line-height: 1.105;" data-fragment-index="1" data-has-line-height="">
+<p style="text-align: left;"><strong><span style="font-size:0.9em">Haskell Wiki:</span></strong></p>
+
+<p><span style="font-size:0.7em"><span style="text-align:start">"There are three kinds of fixity, non-, left- and right-associativity (</span>infix<span style="text-align:start">, </span>infixl<span style="text-align:start">, and </span>infixr<span style="text-align:start">, respectively), and ten precedence levels, 0 to 9 inclusive (level 0 binds least tightly, and level 9 binds most tightly). If the </span><em>digit</em><span style="text-align:start"> is omitted, level 9 is assumed. <strong>Any operator lacking a fixity declaration is assumed to be </strong></span><strong>infixl 9"</strong></span></p>
+</div></div></section><section data-id="94298d12afbc8bca3796abb2540e4aef" class="future" aria-hidden="true" style="display: none;">
+
+
+<div class="sl-block" data-block-type="text" style="height: auto; width: 872px; left: 35px; top: 70px;" data-block-id="f1123690f7c4df061a01dd60475d451c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; line-height: 1.014;" data-has-line-height="">
+<h2>Type-level<strong> Natural Numbers</strong>
+</h2>
+
+<p><strong>(w/ even <em>more </em>ergonomics!) </strong></p>
+</div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 662px; height: 426px; left: 149px; top: 186px;" data-block-id="56366ae712cd2695446a9d3730012bda"><div class="sl-block-content notranslate fragment" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 12; font-size: 140%;" data-fragment-index="0"><pre class="haskell"><code class="hljs"><span class="hljs-type">Prelude</span> <span class="hljs-type">GHC</span>.<span class="hljs-type">TypeNats</span>&gt; :set -<span class="hljs-type">XTypeOperators</span>
+<span class="hljs-type">Prelude</span> <span class="hljs-type">GHC</span>.<span class="hljs-type">TypeNats</span>&gt; :set -<span class="hljs-type">XDataKinds</span>
+<span class="hljs-type">Prelude</span> <span class="hljs-type">GHC</span>.<span class="hljs-type">TypeNats</span>&gt; <span class="hljs-keyword">import</span> GHC.TypeNats
+<span class="hljs-type">Prelude</span> <span class="hljs-type">GHC</span>.<span class="hljs-type">TypeNats</span>&gt; :kind! <span class="hljs-number">1</span> + <span class="hljs-number">1</span> 
+<span class="hljs-number">1</span> + <span class="hljs-number">1</span> :: <span class="hljs-type">Nat</span>
+= <span class="hljs-number">2</span>
+<span class="hljs-type">Prelude</span> <span class="hljs-type">GHC</span>.<span class="hljs-type">TypeNats</span>&gt; :kind! <span class="hljs-number">2</span> ^ <span class="hljs-number">3</span>
+<span class="hljs-number">2</span> ^ <span class="hljs-number">3</span> :: <span class="hljs-type">Nat</span>
+= <span class="hljs-number">8</span>
+<span class="hljs-type">Prelude</span> <span class="hljs-type">GHC</span>.<span class="hljs-type">TypeNats</span>&gt; :kind! <span class="hljs-number">2</span> &lt;=? <span class="hljs-number">3</span>
+<span class="hljs-number">2</span> &lt;=? <span class="hljs-number">3</span> :: <span class="hljs-type">Bool</span>
+= '<span class="hljs-type">True</span>
+<span class="hljs-type">Prelude</span> <span class="hljs-type">GHC</span>.<span class="hljs-type">TypeNats</span>&gt; :kind! (<span class="hljs-number">1</span> + <span class="hljs-number">3</span>) ^ <span class="hljs-number">2</span> - <span class="hljs-number">5</span>
+(<span class="hljs-number">1</span> + <span class="hljs-number">3</span>) ^ <span class="hljs-number">2</span> - <span class="hljs-number">5</span> :: <span class="hljs-type">Nat</span>
+= <span class="hljs-number">11</span>
+</code></pre></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="0d07dfb600483e2dee0b1177561f195e" style="height: auto; min-width: 30px; min-height: 30px; width: 798px; left: 80px; top: 601px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;" data-fragment-index="1" dir="ui"><p><span style="font-size:0.9em">* We will use <em>these</em>&nbsp;type-level natural numbers for the remainder of the workshop</span></p></div></div></section><section data-id="452612ac0fec86513f5ff6f30cdf2017" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="796ea7d1c96db294cb8a4d09481b11ab"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1><strong>Exercise 5</strong></h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 286px; height: auto;" data-block-id="af2941d1ca428d66ed058e52a357e66c"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11;">
+<h3>src/Typelevel/Exercises/Basics.hs</h3>
+</div></div></section><section data-id="08a9af004ffcf0d90130f8ad13d15d3e" class="future" aria-hidden="true" style="display: none;">
+
+
+<div class="sl-block" data-block-type="text" style="height: auto; width: 662px; left: 149px; top: 210px;" data-block-id="b99288f60448cf052b86762c9e5b62da"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; font-size: 84%;" data-fragment-index="0">
+<h2>So, we want our <strong>kinds</strong> to be "<em>kind polymorphic"</em>.</h2>
+</div></div>
+
+
+<div class="sl-block" data-block-type="code" style="width: 664px; height: 70px; left: 148px; top: 350px;" data-block-id="87ae1613c4efec26b12852a8521280f8"><div class="sl-block-content notranslate fragment" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 12; font-size: 250%;" data-fragment-index="1"><pre class="haskell"><code class="hljs"><span class="hljs-meta">{-# LANGUAGE PolyKinds #-}</span></code></pre></div></div>
+</section><section data-id="86c0f446fd8f49f1bce2f3d283367320" class="future" aria-hidden="true" style="display: none;">
+
+
+
+
+<div class="sl-block" data-block-type="code" style="width: 699px; height: 82px; left: 143px; top: 70px;" data-block-id="0f00b0e0b450479b343e91671fc57d6e"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 11; font-size: 260%;"><pre class="haskell"><code class="hljs"><span class="hljs-meta">{-# LANGUAGE PolyKinds #-}</span></code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 186px; top: 185px;" data-block-id="0b1aed10981edad24f71bb2bfd7f9c60"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<ul>
+	<li><span style="font-size:1.2em">GHC will <em>automatically </em>infer <strong>polymorphic kinds</strong> for unannotated kind signatures</span></li>
+	<li><span style="font-size:1.2em">No quantification for kind-variables</span></li>
+	<li><span style="font-size:1.2em">Polykinds <em>implies </em>KindSignatures</span></li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 828px; height: 154px; left: 72px; top: 513px;" data-block-id="4a7e284f26f452e4c91bff62ee0c27d3"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 13; font-size: 140%;"><pre class="haskell"><code class="hljs"><span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-keyword">family</span> <span class="hljs-type">IfThenElse</span> (<span class="hljs-title">c</span> :: <span class="hljs-type">Bool</span>) (<span class="hljs-title">a</span> :: <span class="hljs-title">k</span>) (<span class="hljs-title">b</span> :: <span class="hljs-title">k</span>) where</span>
+  <span class="hljs-type">IfThenElse</span> '<span class="hljs-type">True</span> a b  = a
+  <span class="hljs-type">IfThenElse</span> '<span class="hljs-type">False</span> a b = b
+</code></pre></div></div></section></section><section class="stack future" data-id="67fbf7b54770139d9eaa95436e9fb86f" hidden="" aria-hidden="true" style="display: none;"><section data-id="6466ebfb800c625bc61cfce6b902ab28" style="display: none;">
+
+
+<div class="sl-block" data-block-type="text" style="height: auto; width: 872px; left: 44px; top: 118px;" data-block-id="02305e233f99b6e6b1299e223a7c43b7"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10; line-height: 1.014;" data-has-line-height="">
+<h2><span style="font-size:1.2em"><strong>Type-Indexed </strong>Lists*</span></h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 605px; left: 195px; top: 275px;" data-block-id="ed3b6f2bfe16d09ea3f789791db83702"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; font-size: 130%;" dir="ui">
+<ul>
+	<li class="fragment" data-fragment-index="0">Length-Indexed Lists</li>
+	<li class="fragment" data-fragment-index="0">Type-level lists</li>
+	<li class="fragment" data-fragment-index="0">Heterogenous Lists</li>
+	<li class="fragment" data-fragment-index="1">
+<strong>Type-safe </strong><em>Extensible</em> Records</li>
+</ul>
+</div></div></section><section data-id="08d8f7c34608091467afceb8b3353397" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="code" style="width: 564px; height: 355px; left: 210px; top: 229px;" data-block-id="cd367ab7e34f4d1cac899c830bc397fb"><div class="sl-block-content notranslate fragment" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 10; font-size: 140%;" data-fragment-index="0"><pre class="haskell"><code class="hljs"><span class="hljs-meta">{-# LANGUAGE DataKinds             #-}</span>
+<span class="hljs-meta">{-# LANGUAGE ConstraintKinds       #-}</span>
+<span class="hljs-meta">{-# LANGUAGE GADTs                 #-}</span>
+<span class="hljs-meta">{-# LANGUAGE FlexibleContexts      #-}</span>
+<span class="hljs-meta">{-# LANGUAGE FlexibleInstances     #-}</span>
+<span class="hljs-meta">{-# LANGUAGE KindSignatures        #-}</span>
+<span class="hljs-meta">{-# LANGUAGE MultiParamTypeClasses #-}</span>
+<span class="hljs-meta">{-# LANGUAGE PolyKinds             #-}</span>
+<span class="hljs-meta">{-# LANGUAGE TypeFamilies          #-}</span>
+<span class="hljs-meta">{-# LANGUAGE TypeOperators         #-}</span>
+<span class="hljs-meta">{-# LANGUAGE UndecidableInstances  #-}</span></code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 645px; left: 158px; top: 122px;" data-block-id="68a9ca3535ddfe16226e260912d088e1"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<h2>Language<strong> Extensions</strong>
+</h2>
+</div></div>
+
+<div class="sl-block" data-block-type="shape" style="width: 532px; height: 29px; left: 210px; top: 286px;" data-block-id="5ec11524c23096f4f281821547fc6b11"><div class="sl-block-style" style="z-index: 12; opacity: 0.29;"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(106, 168, 79)" data-shape-stretch="true" style="z-index: 12;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 532 29"><rect width="532" height="29" rx="0" ry="0" class="shape-element" fill="rgb(106, 168, 79)"></rect></svg></div></div></div>
+
+<div class="sl-block" data-block-type="shape" style="width: 532px; height: 29px; left: 210px; top: 231px;" data-block-id="06c8a80defd76c48cddf1574d3877a73"><div class="sl-block-style" style="z-index: 16; opacity: 0.29;"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(106, 168, 79)" data-shape-stretch="true" style="z-index: 16;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 532 29"><rect width="532" height="29" rx="0" ry="0" class="shape-element" fill="rgb(106, 168, 79)"></rect></svg></div></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 532px; height: 164px; left: 210px; top: 369px;" data-block-id="63c8f342ae13415d5006f0b2ddc9d95e"><div class="sl-block-style" style="z-index: 17; opacity: 0.29;"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(106, 168, 79)" data-shape-stretch="true" style="z-index: 17;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 532 164"><rect width="532" height="164" rx="0" ry="0" class="shape-element" fill="rgb(106, 168, 79)"></rect></svg></div></div></div></section><section data-id="3afe1ffe5427b44c41ee69493dc22032" class="future" aria-hidden="true" style="display: none;">
+
+
+<div class="sl-block" data-block-type="text" style="height: auto; width: 872px; left: 44px; top: 167px;" data-block-id="33eb8e526edcb64447785f76b1496761"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; line-height: 1.014;" data-has-line-height="">
+<h2>
+<em>Length Indexed </em><strong>Lists</strong>
+</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="2c6c4529b74286ba153883ae0021a5ed" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 70px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<h1><strong>Exercise 1</strong></h1>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="01cf5b4d9ce3c2bdcf998d0cff76e53b" style="height: auto; min-width: 30px; min-height: 30px; width: 720px; left: 120px; top: 274px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;">
+<ul>
+	<li>
+<span style="font-size:1.2em"><strong>Part A: </strong></span>
+	<ul>
+		<li>Define a GADT that encodes a recursive list structure indexed by its length (as type <strong>Nat</strong>)</li>
+	</ul>
+	</li>
+	<li>
+<span style="font-size:1.2em"><strong>Part B:</strong></span>
+	<ul>
+		<li>Implement the <strong>nappend </strong>function that appends two length indexed lists</li>
+		<li>Note: You may have trouble with this. There are two solutions.</li>
+	</ul>
+	</li>
+</ul>
+</div></div></section><section data-id="a884e0c739776b7582a5f66871525669" class="future" aria-hidden="true" style="display: none;">
+
+
+<div class="sl-block" data-block-type="text" style="height: auto; width: 872px; left: 44px; top: 70px;" data-block-id="726654842f5d8ba4a4fd35b720fee404"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10; line-height: 1.014;" data-has-line-height="">
+<h2>
+<em>Type-level</em> <strong>Lists</strong>
+</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 819px; height: 481px; left: 97px; top: 168px;" data-block-id="45755ad466d365520cd77b3cdcefe5c3"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 11; font-size: 150%;"><pre class="haskell"><code class="hljs"><span class="hljs-comment">-- Defined in GHC.Types</span>
+<span class="hljs-class"><span class="hljs-keyword">data</span> [a]</span>
+  = []
+  | a : [a]
+
+<span class="hljs-type">Prelude</span>&gt; :set -<span class="hljs-type">XDataKinds</span> -<span class="hljs-type">XTypeOperators</span>
+<span class="hljs-type">Prelude</span>&gt; :t []
+[] :: [a]
+<span class="hljs-type">Prelude</span>&gt; :t <span class="hljs-number">1</span> : <span class="hljs-number">2</span> : <span class="hljs-number">3</span> : []
+[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>] :: <span class="hljs-type">Num</span> a =&gt; [a]
+<span class="hljs-type">Prelude</span>&gt; :k '[]
+'[] :: [k]
+<span class="hljs-type">Prelude</span>&gt; :kind! <span class="hljs-number">1</span> ': <span class="hljs-number">2</span> ': <span class="hljs-number">3</span> ': '[]
+<span class="hljs-number">1</span> ': <span class="hljs-number">2</span> ': <span class="hljs-number">3</span> ': '[] :: [ghc-prim<span class="hljs-number">-0.5</span><span class="hljs-number">.3</span>:<span class="hljs-type">GHC</span>.<span class="hljs-type">Types</span>.<span class="hljs-type">Nat</span>]
+= '[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]
+
+</code></pre></div></div></section><section data-id="7d880b1200a5d1db59fe9f63ede8a66e" class="future" aria-hidden="true" style="display: none;">
+
+
+<div class="sl-block" data-block-type="text" style="height: auto; width: 872px; left: 44px; top: 70px;" data-block-id="022f0d65b6f4952ddd964d54e1c33dd1"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10; line-height: 1.014;" data-has-line-height="">
+<h2>
+<em>Type-level</em> <strong>Lists</strong>
+</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 819px; height: 481px; left: 97px; top: 168px;" data-block-id="9faa021a6db598419c0359c5b0c7780f"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 11; font-size: 150%;"><pre class="haskell"><code class="hljs"><span class="hljs-comment">-- Defined in GHC.Types</span>
+<span class="hljs-class"><span class="hljs-keyword">data</span> [a]</span>
+  = []
+  | a : [a]
+
+<span class="hljs-type">Prelude</span>&gt; :set -<span class="hljs-type">XDataKinds</span> -<span class="hljs-type">XTypeOperators</span>
+<span class="hljs-type">Prelude</span>&gt; :t []
+[] :: [a]
+<span class="hljs-type">Prelude</span>&gt; :t <span class="hljs-number">1</span> : <span class="hljs-number">2</span> : <span class="hljs-number">3</span> : []
+[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>] :: <span class="hljs-type">Num</span> a =&gt; [a]
+<span class="hljs-type">Prelude</span>&gt; :k '[]
+'[] :: [k]
+<span class="hljs-type">Prelude</span>&gt; :kind! <span class="hljs-number">1</span> ': <span class="hljs-number">2</span> ': <span class="hljs-number">3</span> ': '[]
+<span class="hljs-number">1</span> ': <span class="hljs-number">2</span> ': <span class="hljs-number">3</span> ': '[] :: [ghc-prim<span class="hljs-number">-0.5</span><span class="hljs-number">.3</span>:<span class="hljs-type">GHC</span>.<span class="hljs-type">Types</span>.<span class="hljs-type">Nat</span>]
+= '[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]
+
+</code></pre></div></div></section><section data-id="c71638c526c30e0e602b8b2336fca925" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="e4e4bb0e830a7f055140e03c10a83b24"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>
+<strong>Exercise</strong> 1</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 286px; height: auto;" data-block-id="12cfc8b83a2ac8cebed0d28743927a23"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11;">
+<h3>src/Typelevel/Exercises/Lists.hs</h3>
+</div></div></section><section data-id="dff55ed04fda8a8a8e785e150d91f255" class="future" aria-hidden="true" style="display: none;">
+
+
+<div class="sl-block" data-block-type="text" style="height: auto; width: 872px; left: 44px; top: 70px;" data-block-id="4dd4cdec86f0d9f4df855ea3a55ce547"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10; line-height: 1.014;" data-has-line-height="">
+<h2>
+<em>Higher-Order </em><strong>Type Families</strong>
+</h2>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 689px; left: 136px; top: 198px;" data-block-id="c3163d23766b588812979b557d655636"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;" data-fragment-index="0" dir="ui">
+<ul>
+	<li>Type-level functions that take type-level functions as arguments.</li>
+	<li>Cannot return type-level functions as a result
+	<ul>
+		<li>First-class families
+		<ul>
+			<li><span style="font-size:0.9em"><a href="https://blog.poisson.chat/posts/2018-08-06-one-type-family.html" target="_blank">https://blog.poisson.chat/posts/2018-08-06-one-type-family.html</a></span></li>
+			<li><span style="font-size:0.9em"><a href="http://hackage.haskell.org/package/first-class-families" target="_blank">http://hackage.haskell.org/package/first-class-families<span style="font-size:0.9em">​​</span></a></span></li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+	<li>Cannot pass in type-families as arguments, only type-constructors</li>
+</ul>
+</div></div></section><section data-id="16983d7136cd61be9694beedcb6920ba" class="future" aria-hidden="true" style="display: none;">
+
+
+<div class="sl-block" data-block-type="text" style="height: auto; width: 872px; left: 44px; top: 70px;" data-block-id="681e5d5051e69ca162780423f5741b00"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10; line-height: 1.014;" data-has-line-height="">
+<h2>
+<em>Higher-Order </em><strong>Type Families</strong>
+</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 922px; height: 339px; left: 19px; top: 238px;" data-block-id="5d2e802acc2ada7ef376428db3bd0a59"><div class="sl-block-content notranslate fragment" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 12; font-size: 150%;" data-fragment-index="0"><pre class="haskell"><code class="hljs"><span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-keyword">family</span> <span class="hljs-type">Map</span> (<span class="hljs-title">f</span> :: <span class="hljs-title">k</span> -&gt; <span class="hljs-title">j</span>) (<span class="hljs-title">xs</span> :: [<span class="hljs-title">k</span>]) :: [j] where</span>
+  <span class="hljs-type">Map</span> f '[] = '[]
+  <span class="hljs-type">Map</span> f (x ': xs) = f x ': <span class="hljs-type">Map</span> f xs
+
+<span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-keyword">family</span> <span class="hljs-type">Filter</span> (<span class="hljs-title">f</span> :: <span class="hljs-title">k</span> -&gt; <span class="hljs-type">Bool</span>) (<span class="hljs-title">xs</span> :: [<span class="hljs-title">k</span>]) :: [k] where</span>
+  <span class="hljs-type">Filter</span> p '[] = '[]
+  <span class="hljs-type">Filter</span> p (x ': xs) =
+    <span class="hljs-type">IfThenElse</span> (p x)
+      (x ': <span class="hljs-type">Filter</span> p xs)
+      (<span class="hljs-type">Filter</span> p xs)</code></pre></div></div></section><section data-id="7d410270539314978441ea88e6d554e8" class="future" aria-hidden="true" style="display: none;">
+
+
+<div class="sl-block" data-block-type="text" style="height: auto; width: 872px; left: 44px; top: 70px;" data-block-id="511bdf5b90de54096b0d80a528fb13a1"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; line-height: 1.014;" data-has-line-height="">
+<h2>
+<em>Heterogenous </em><strong>Lists</strong>
+</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 696px; height: 280px; left: 151px; top: 210px;" data-block-id="5b865c80e2fae42c6c9608b8984923d0"><div class="sl-block-content notranslate fragment" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 12; font-size: 150%;" data-fragment-index="0"><pre class="haskell"><code class="hljs"><span class="hljs-meta">{-# LANGUAGE DataKinds      #-}</span>
+<span class="hljs-meta">{-# LANGUAGE GADTs          #-}</span>
+<span class="hljs-meta">{-# LANGUAGE KindSignatures #-}</span>
+<span class="hljs-meta">{-# LANGUAGE PolyKinds      #-}</span>
+<span class="hljs-meta">{-# LANGUAGE TypeOperators  #-}</span>
+
+<span class="hljs-class"><span class="hljs-keyword">data</span> <span class="hljs-type">HList</span> (<span class="hljs-title">a</span> :: [*]) where</span>
+  <span class="hljs-type">HNil</span>  :: <span class="hljs-type">HList</span> '[]
+  <span class="hljs-type">HCons</span> :: x -&gt; <span class="hljs-type">HList</span> xs -&gt; <span class="hljs-type">HList</span> (x ': xs)</code></pre></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="c2bd47008340b7e3d761ea7234bb3a98" style="height: auto; min-width: 30px; min-height: 30px; width: 738px; left: 111px; top: 552px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;" data-fragment-index="1">
+<p>Why wouldn't we annotate the kind of `a` as `[k]`, i.e. why isn't the type level list <em>kind polymorphic?</em></p>
+</div></div></section><section data-id="d45f09dc6db31fb0fa0c93477d21e5de" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="20f50a2c684ee409d2644269761bf4bc"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1><strong>Exercises 2 &amp; 3</strong></h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 286px; height: auto;" data-block-id="1356d923f765ac58cf5b8674e692777d"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11;">
+<h3>src/Typelevel/Exercises/Lists.hs</h3>
+</div></div></section><section data-id="8634954db0cf48d886ff6782bb2cb43b" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="code" data-block-id="8bbd5752cc6921906e98730b3a7a5a37" style="min-width: 30px; min-height: 30px; width: 862px; height: 88px; left: 56px; top: 70px;"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 11; font-size: 250%;"><pre class="haskell"><code class="hljs"><span class="hljs-meta">{-# LANGUAGE FlexibleInstances #-}</span></code></pre></div></div>
+<div class="sl-block" data-block-type="code" data-block-id="cf45fcada0a4f3d5395b931ca3693c3b" style="min-width: 30px; min-height: 30px; width: 923px; height: 520px; left: 37px; top: 160px;"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 12; font-size: 120%;"><pre class="haskell"><code style="padding: 0px;" class="hljs">.../types-<span class="hljs-keyword">as</span>-specifications/src/<span class="hljs-type">Typelevel</span>/<span class="hljs-type">Lists</span>.hs:<span class="hljs-number">58</span>:<span class="hljs-number">10</span>: error:
+    • <span class="hljs-type">Illegal</span> <span class="hljs-keyword">instance</span> declaration for ‘<span class="hljs-type">Show</span> (<span class="hljs-type">HList</span> '[])’
+        (<span class="hljs-type">All</span> <span class="hljs-keyword">instance</span> types must be <span class="hljs-keyword">of</span> the form (<span class="hljs-type">T</span> a1 ... an)
+         <span class="hljs-keyword">where</span> a1 ... an are *distinct <span class="hljs-class"><span class="hljs-keyword">type</span> variables*,</span>
+         and each <span class="hljs-class"><span class="hljs-keyword">type</span> variable appears at most once in the instance head.</span>
+         <span class="hljs-type">Use</span> <span class="hljs-type">FlexibleInstances</span> <span class="hljs-keyword">if</span> you want to disable this.)
+    • <span class="hljs-type">In</span> the <span class="hljs-keyword">instance</span> declaration for ‘<span class="hljs-type">Show</span> (<span class="hljs-type">HList</span> '[])’
+   |
+<span class="hljs-number">58</span> | <span class="hljs-keyword">instance</span> <span class="hljs-type">Show</span> (<span class="hljs-type">HList</span> '[]) <span class="hljs-keyword">where</span>
+   |          ^^^^^^^^^^^^^^^^
+
+.../types-<span class="hljs-keyword">as</span>-specifications/src/<span class="hljs-type">Typelevel</span>/<span class="hljs-type">Lists</span>.hs:<span class="hljs-number">61</span>:<span class="hljs-number">39</span>: error:
+    • <span class="hljs-type">Illegal</span> <span class="hljs-keyword">instance</span> declaration for ‘<span class="hljs-type">Show</span> (<span class="hljs-type">HList</span> (x : xs))’
+        (<span class="hljs-type">All</span> <span class="hljs-keyword">instance</span> types must be <span class="hljs-keyword">of</span> the form (<span class="hljs-type">T</span> a1 ... an)
+         <span class="hljs-keyword">where</span> a1 ... an are *distinct <span class="hljs-class"><span class="hljs-keyword">type</span> variables*,</span>
+         and each <span class="hljs-class"><span class="hljs-keyword">type</span> variable appears at most once in the instance head.</span>
+         <span class="hljs-type">Use</span> <span class="hljs-type">FlexibleInstances</span> <span class="hljs-keyword">if</span> you want to disable this.)
+    • <span class="hljs-type">In</span> the <span class="hljs-keyword">instance</span> declaration for ‘<span class="hljs-type">Show</span> (<span class="hljs-type">HList</span> (x : xs))’
+   |
+<span class="hljs-number">61</span> | <span class="hljs-keyword">instance</span> (<span class="hljs-type">Show</span> x, <span class="hljs-type">Show</span> (<span class="hljs-type">HList</span> xs)) =&gt; <span class="hljs-type">Show</span> (<span class="hljs-type">HList</span> (x ': xs)) <span class="hljs-keyword">where</span>
+   | </code></pre></div></div></section><section data-id="601dae2ec48285133cfe1d279eaebf3b" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="code" style="width: 862px; height: 88px; left: 80px; top: 89px;" data-block-id="82d090bda643ab2d6e46d4ea2ebc1e5f"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 11; font-size: 250%;"><pre class="haskell"><code class="hljs"><span class="hljs-meta">{-# LANGUAGE ConstraintKinds #-}</span></code></pre></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="e9e9ef8620437aee2f423da26a7ee7af" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 210px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<ul>
+	<li>Any <em>type </em>of <em>kind </em><strong>Constraint </strong>can be used as a Constraint&nbsp;</li>
+	<li>Tuples where each element is of <em>kind </em><strong>Constraint </strong>can be used as a Constraint</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="ea5f79aa93d9afb7c0995154cadd384c" style="min-width: 30px; min-height: 30px; width: 551px; height: 220px; left: 205px; top: 420px;"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 13; font-size: 150%;"><pre class="haskell"><code class="hljs"><span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-type">ShowNum</span> a = (<span class="hljs-type">Show</span> <span class="hljs-title">a</span>, <span class="hljs-type">Num</span> <span class="hljs-title">a</span>)</span>
+
+<span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-keyword">family</span> <span class="hljs-type">Typ</span> a b :: <span class="hljs-type">Constraint</span></span>
+<span class="hljs-class"><span class="hljs-keyword">type</span> instance <span class="hljs-type">Typ</span> <span class="hljs-type">Int</span>  b = <span class="hljs-type">Show</span> b</span>
+<span class="hljs-class"><span class="hljs-keyword">type</span> instance <span class="hljs-type">Typ</span> <span class="hljs-type">Bool</span> b = <span class="hljs-type">Num</span> b</span></code></pre></div></div></section><section data-id="17401d1d479f324e1e17c606244cd753" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="code" style="width: 862px; height: 88px; left: 56px; top: 70px;" data-block-id="30f23f64f08b205a72d0812f9c59f8ce"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 10; font-size: 250%;"><pre class="haskell"><code class="hljs"><span class="hljs-meta">{-# LANGUAGE ConstraintKinds #-}</span></code></pre></div></div>
+<div class="sl-block" data-block-type="code" style="width: 870px; height: 104px; left: 56px; top: 202px;" data-block-id="bdd16ebe236d2a08c4f12e3573fc5c89"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 11; font-size: 120%;"><pre class="haskell"><code style="padding: 0px;" class="hljs"><span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-keyword">family</span> <span class="hljs-type">All</span> (<span class="hljs-title">c</span> :: <span class="hljs-title">k</span> -&gt; <span class="hljs-type">Constraint</span>) (<span class="hljs-title">xs</span> :: [<span class="hljs-title">k</span>]) :: <span class="hljs-type">Constraint</span> where</span>
+  <span class="hljs-type">All</span> _ '[] = ()
+  <span class="hljs-type">All</span> c (x ': xs) = (c x, <span class="hljs-type">All</span> c xs)</code></pre></div></div>
+<div class="sl-block" data-block-type="code" style="width: 723px; height: 248px; left: 126px; top: 360px;" data-block-id="a38f9e540061077d446cd177523a28fd"><div class="sl-block-content notranslate" data-highlight-theme="tomorrow" data-code-frame="none" style="z-index: 12; font-size: 120%;"><pre class="haskell"><code class="hljs"><span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-keyword">family</span> <span class="hljs-type">IsElem</span> (<span class="hljs-title">a</span> :: <span class="hljs-title">k</span>) (<span class="hljs-title">xs</span> :: [<span class="hljs-title">k</span>]) :: <span class="hljs-type">Bool</span> where</span>
+  <span class="hljs-type">IsElem</span> a '[] = '<span class="hljs-type">False</span>
+  <span class="hljs-type">IsElem</span> a (a ': xs) = '<span class="hljs-type">True</span>
+  <span class="hljs-type">IsElem</span> a (x ': xs) = <span class="hljs-type">Elem</span> a xs
+
+<span class="hljs-class"><span class="hljs-keyword">type</span> <span class="hljs-keyword">family</span> <span class="hljs-type">Elem</span> (<span class="hljs-title">a</span> :: <span class="hljs-title">k</span>) (<span class="hljs-title">xs</span> :: [<span class="hljs-title">k</span>]) :: <span class="hljs-type">Constraint</span> where</span>
+  <span class="hljs-type">Elem</span> a xs = <span class="hljs-type">IsElem</span> ~ '<span class="hljs-type">True</span></code></pre></div></div></section><section data-id="722ffe9f504ef735a4ac562e1e216a1f" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 189px; height: auto;" data-block-id="8bbb3ceb31b0e3bc94b02c37054a2b52"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1><strong>Exercise 4</strong></h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 286px; height: auto;" data-block-id="b3c4df53f676193b07846ae19141f14c"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11;">
+<h3>src/Typelevel/Exercises/Lists.hs</h3>
+</div></div></section><section data-id="a04e2f958a1572c4c1e230999f67ae39" class="future" aria-hidden="true" style="display: none;"><div class="sl-block" data-block-type="text" style="width: 806px; left: 77px; top: 140px; height: auto;" data-block-id="53e8c45aaaf9c82137b952861eb7e8d6"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
+<h1>Live Programming</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 686px; left: 137px; top: 265px; height: auto;" data-block-id="06e9dc764b2cd848ebe4f3b84742f0ed"><div class="sl-block-style" style="z-index: 11; transform: rotate(360deg);"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" style="z-index: 11;" dir="ui">
+<ul>
+	<li>
+	<p>Implement a type family that appends two <strong>HList</strong>&nbsp;values</p>
+
+	<ul>
+		<li>
+		<p>Data.Type.Equality</p>
+		</li>
+		<li>
+		<p>Prove type equality at the <em>value level</em></p>
+		</li>
+	</ul>
+	</li>
+	<li>
+<strong>Type-safe</strong> <em>Extensible</em> Records
+	<ul>
+		<li>"access" record field</li>
+		<li>"extend" record</li>
+	</ul>
+	</li>
+</ul>
+</div></div></div></section></section>
+			</div>
+		<div class="backgrounds"><div class="slide-background present" data-loaded="true" style="display: block;"><div class="slide-background-content"></div></div><div class="slide-background future" data-loaded="true" style="display: block;"><div class="slide-background-content"></div></div><div class="slide-background future" data-loaded="true" style="display: block;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background stack future" style="display: none;"><div class="slide-background-content"></div><div class="slide-background present" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div></div><div class="slide-background stack future" style="display: none;"><div class="slide-background-content"></div><div class="slide-background present" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div></div><div class="slide-background stack future" style="display: none;"><div class="slide-background-content"></div><div class="slide-background present" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div></div><div class="slide-background stack future" style="display: none;"><div class="slide-background-content"></div><div class="slide-background present" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div></div><div class="slide-background stack future" style="display: none;"><div class="slide-background-content"></div><div class="slide-background present" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div></div></div><div class="slide-number" style="display: none;"></div><aside class="controls" data-controls-layout="bottom-right" data-controls-back-arrows="faded" style="display: block;"><button class="navigate-left" aria-label="previous slide" disabled="disabled"><div class="controls-arrow"></div></button>
+			<button class="navigate-right enabled highlight" aria-label="next slide"><div class="controls-arrow"></div></button>
+			<button class="navigate-up" aria-label="above slide" disabled="disabled"><div class="controls-arrow"></div></button>
+			<button class="navigate-down" aria-label="below slide" disabled="disabled"><div class="controls-arrow"></div></button></aside><div class="progress" style="display: block;"><span style="transform: scaleX(0);"></span></div><div class="speaker-notes" data-prevent-swipe="" tabindex="0"></div><div class="pause-overlay"><button class="resume-button">Resume presentation</button></div><div class="aria-status" aria-live="polite" aria-atomic="true" style="position: absolute; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px);">Types as Specifications: An Intro to Type-level Programming in Haskell Thomas Dietert Lambda Conf 2019 Boulder, CO </div></div>
+
+		
+		
+<script>
+	var SLConfig = {"deck":{"id":1511678,"slug":"types-as-specifications","title":"Types as Specifications:","description":"","width":960,"height":700,"margin":0.05,"visibility":"all","published_at":"2019-05-23T00:24:29.151Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/bbdbae227bcfe37206a994af73ce3d8c/thumb.jpg?1559831643","view_count":337,"user":{"id":937331,"username":"thomasdietert","name":"Thomas Dietert","description":null,"thumbnail_url":"https://lh5.googleusercontent.com/-HEjKgtb-8bg/AAAAAAAAAAI/AAAAAAAAAAA/AAN31DWLhJuxoY8Ho-Yynt3f-L65vfd9BA/mo/photo.jpg","paid":false,"pro":false,"lite":false,"team_id":null,"settings":{"id":1959511,"present_controls":true,"present_upsizing":true,"present_pointer":true,"present_notes":true,"default_deck_tag_id":null}},"background_transition":"slide","transition":"slide","theme_id":null,"theme_font":"montserrat","theme_color":"white-blue","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":true,"rolling_links":false,"center":false,"shuffle":null,"should_loop":false,"share_notes":null,"slide_number":null,"slide_count":76,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":null,"data_updated_at":1559836732285,"font_typekit":null,"font_google":null,"time_limit":null,"navigation_mode":"default","upsizing_enabled":null},"user":{"id":937331,"username":"thomasdietert","name":"Thomas Dietert","description":null,"thumbnail_url":"https://lh5.googleusercontent.com/-HEjKgtb-8bg/AAAAAAAAAAI/AAAAAAAAAAA/AAN31DWLhJuxoY8Ho-Yynt3f-L65vfd9BA/mo/photo.jpg","paid":false,"pro":false,"lite":false,"team_id":null,"settings":{"id":1959511,"present_controls":true,"present_upsizing":true,"present_pointer":true,"present_notes":true,"default_deck_tag_id":null}}};
+</script>
+		<script src="./Types as Specifications__files/application-12cb28d2fd11a8d0ee6e6253689b9ae29899c2c8e5ad2c0b4785284523588755.js" defer="defer"></script>
+		<script src="./Types as Specifications__files/deck-4e705d69a1a50f3f7bcf4da9d8ec67ba500a387e49dc737630bdbfbdd59ead6c.js" defer="defer"></script>
+		
+
+	
+</body></html>
