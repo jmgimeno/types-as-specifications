@@ -38,7 +38,7 @@ type (||) a b = Or a b
 --
 --   Implement the type-level AND operation between two types of kind Bool
 ----------------------------------------
-type family And (a :: Bool) (b :: Bool) where
+type family And (a :: Bool) (b :: Bool) :: Bool where
   And 'True 'True = 'True
   And _ _ = 'False
 
@@ -61,7 +61,7 @@ testAnd4 = Refl :: And 'False 'False :~: 'False
 --   Implement the IfThenElse type family that returns the 'a' type if the 'c'
 --   type is 'True, and the 'b' type if the 'c' type is 'False
 ----------------------------------------
-type family IfThenElse (c :: Bool) (a :: *) (b :: *) where
+type family IfThenElse (c :: Bool) (a :: *) (b :: *) :: * where
   IfThenElse 'True  a _ = a
   IfThenElse 'False _ b = b
 
