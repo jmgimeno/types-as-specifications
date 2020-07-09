@@ -163,6 +163,11 @@ gexpr_Example_1 =
 ----------------------------------------
 gexpr_Exercise_2a :: GExpr a
 gexpr_Exercise_2a = undefined
+{- Impossible !!!
+  GIf (GAnd (GBool True) (GBool False))
+      (GAnd (GInt 7) (GInt 2))
+      (GEq (GInt1) (GInt 1))
+-}
 
 ----------------------------------------
 -- Exercise 2b
@@ -188,4 +193,8 @@ gevalLit (GBool b) = b
 gevalLit (GInt n)  = n
 
 geval :: GExpr a -> a
-geval = undefined
+geval (GLit l) = gevalLit l
+geval (GAdd e1 e2)  = geval e1 + geval e2
+geval (GAnd e1 e2)  = geval e1 && geval e2
+geval (GEq e1 e2)   = geval e1 == geval e2
+geval (GIf c e1 e2) = if geval c then geval e1 else geval e2
